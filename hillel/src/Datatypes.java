@@ -20,5 +20,12 @@ public class Datatypes {
         long l = 5000000000L;
         float f = 2.5F;
 
+        boolean bool = true;
+        bool = false;
+        // bool = 0 error!!!
+
+        String str = "text";
+        char a = 'b';
+
     }
 }
