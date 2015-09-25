@@ -1,22 +1,19 @@
 package homeWork2;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
 /**
  * Created by igor on 25.09.15.
  */
 public class OddOrNot {
-    public static void main(String[] args) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Please, enter the integer:");
-        int var = Integer.parseInt(reader.readLine());
+        int var = scanner.nextInt();
 
-        if (var%2==0){
+        if (var % 2 == 0) {
             System.out.println("This integer is even.");
-        }
-        else {
+        } else {
             System.out.println("This integer is odd.");
         }
     }
