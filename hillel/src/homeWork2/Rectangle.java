@@ -32,7 +32,7 @@ public class Rectangle {
             y2 = (-(-0.5 * p) + (Math.sqrt(discr))) / 2;
             x2 = p / 2 - y2;
             System.out.print("Side x2 is " + x2 + " and side y2 is " + y2);
-        } else if (discr == 0) {
+        } else if ((int)discr == 0) {
             y = -(-0.5 * p) / 2;
             x = p / 2 - y;
             System.out.println("Side x is " + x + " and side y is " + y);
