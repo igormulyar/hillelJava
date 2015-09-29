@@ -4,15 +4,84 @@ import java.util.Scanner;
 
 /**
  * Created by TRUST on 29.09.2015.
- * this program works with integers
+ *
  */
 public class Calculator {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner (System.in);
+        System.out.println("Для вывода инструкции введите \"man\", иначе - любой другой символ");
+        String instruction = scanner.next();
+        if (instruction.equals("man")){
+        printManual();
+        }
+        while (true){
+            working();
+            System.out.println("Еще?  (Для продолжения введите \"Y\", для выхода - любой другой символ.)");
+            String wantMore = scanner.next();
+            if (wantMore.equals("Y")){
+                continue;
+            } else {
+                break;
+            }
+        }
+    }
+
+    private static void working() {
+        Scanner scannerForDoubles = new Scanner(System.in);
+        Scanner scannerForText = new Scanner(System.in);
+        // уж лучше бы использовал BufferedReader...
+        // Проблема такого рода: http://stackoverflow.com/questions/5032356/using-scanner-nextline
+        // мой вывод - сканер - фигня
         double a;
         double b;
         String operation;
+        double result=0;
 
+        System.out.println("Введите число: ");
+        a=scannerForDoubles.nextDouble();
+        System.out.println("Введите операцию: ");
+        operation = scannerForText.nextLine();
+
+        switch (operation){
+            case "+":
+                System.out.println("Введите второе число: ");b=scannerForDoubles.nextDouble();
+                result=plus(a,b);
+                break;
+            case "-":
+                System.out.println("Введите второе число: ");
+                b=scannerForDoubles.nextDouble();
+                result = minus(a,b);
+                break;
+            case "*":
+                System.out.println("Введите второе число: ");
+                b=scannerForDoubles.nextDouble();
+                result = multiple(a, b);
+                break;
+            case "/":
+                System.out.println("Введите второе число: ");
+                b=scannerForDoubles.nextDouble();
+                result = div(a, b);
+                break;
+            case "pow":
+                System.out.println("Введите второе число: ");
+                b=scannerForDoubles.nextDouble();
+                result = pow(a, b);
+                break;
+            case "sqrt":
+                result = sqrt(a);
+                break;
+            case "trunk":
+                result = trunk(a);
+                break;
+            case "fract":
+                result = fract(a);
+                break;
+            default:
+                System.out.println("Парень, ты где-то накосячил... попробуй сначала.");
+                break;
+        }
+
+        System.out.println("Результат: "+dataType(result));
     }
 
     private static double plus(double a, double b){
@@ -31,19 +100,50 @@ public class Calculator {
         return Math.pow(a,b);
     }
     private static double sqrt (double a){
-        return Math.sqrt(a); //
+        return Math.sqrt(a);
     }
     private static int trunk (double a){
         return (int)a;
     }
     private static double fract (double a){
-        int wholeNumb = (int) a;
+        long wholeNumb = (long) a;
+        System.out.println("wholeNumb = "+wholeNumb);
         a = a - wholeNumb;
+        System.out.println("a = "+a);
         return a;
     }
 
     private static String dataType (double number){
-        return null;
+        if (!(fract(number)==0))
+            return number+" (double)";
+        else{
+
+            long longNumber = (long) number;
+            System.out.println("longNumber = "+longNumber);
+            if (longNumber<=127 && longNumber>=-128){
+                return (long)longNumber+" (byte)";
+            }else if (longNumber<=32767 && longNumber>=-32768){
+                return (long)longNumber+" (short)";
+            } else if (longNumber<=2147483647 && longNumber>= -2147483648){
+                return (int)longNumber+" (int)";
+            } else {
+            return (long) longNumber+" (long)";
+            }
+        }
+    }
+
+    private static void printManual (){
+        System.out.println("После каждого ввода, следует нажать Enter");
+        System.out.println("Поддерживаются следующие операции:");
+        System.out.println("\"+\" - сложение");
+        System.out.println("\"-\" - вычитаниие");
+        System.out.println("\"*\" - умножение");
+        System.out.println("\"/\" - деление");
+        System.out.println("\"pow\" - возведение в степень");
+        System.out.println("\"sqrt\" - квадратный корень");
+        System.out.println("\"trunk\" - отбрасывание дробной части");
+        System.out.println("\"fract\" - отбрасывание целой части");
+        System.out.println("------------------------\n");
     }
 
 }
