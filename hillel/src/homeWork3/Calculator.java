@@ -107,9 +107,7 @@ public class Calculator {
     }
     private static double fract (double a){
         long wholeNumb = (long) a;
-        System.out.println("wholeNumb = "+wholeNumb);
         a = a - wholeNumb;
-        System.out.println("a = "+a);
         return a;
     }
 
