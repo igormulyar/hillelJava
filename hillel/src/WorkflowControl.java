@@ -8,7 +8,8 @@ import java.util.Scanner;
  */
 public class WorkflowControl {
     public static void main(String[] args) {
-
+        double d =2.0;
+       isEven(d);
 
     }
 
@@ -18,13 +19,7 @@ public class WorkflowControl {
         isEven = (number % 2 == 0)? "Yessss!" : "noooooo!";
     }
 
-    public static String isEven(int someNumber) {
-        if (someNumber % 2 == 0) {
-            return "yes";
-        } else {
-            return "no";
-        }
-    }
+
 
     private static void switchExample2() {
         String month = "march";
@@ -44,6 +39,47 @@ public class WorkflowControl {
                 break;
         }
     }
+
+    public static String isEven(int someNumber) {
+        System.out.println("int meth");
+        if (someNumber % 2 == 0) {
+            return "yes";
+        } else {
+            return "no";
+        }
+    }
+
+
+/*  DOES NOT WORKS!
+    public static boolean isEven(int someNumber) {
+        if (someNumber % 2 == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }*/
+    public static boolean isEven(double someNumber) {
+        System.out.println("double meth");
+         if (someNumber % 2 == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    private static boolean isOdd (int someNumber) {
+
+        if (someNumber % 2 != 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+
+
 
     private static void switchCaseExample() {
         String month = "may";
