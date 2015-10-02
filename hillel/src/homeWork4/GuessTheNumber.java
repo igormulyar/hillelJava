@@ -7,7 +7,7 @@ import java.util.Scanner;
  */
 public class GuessTheNumber {
     public static void main(String[] args) {
-        final int randNumb = (int) (Math.random()*9+1);
+        final int randNumb = (int) (Math.random() * 9 + 1);
         int answer;
         int attempts = 1;
         //System.out.println(randNumb);
@@ -16,20 +16,20 @@ public class GuessTheNumber {
 
         do {
             answer = scanner.nextInt();
-            if (answer!=randNumb){
-                System.out.println(compareInts(randNumb,answer));
+            if (answer != randNumb) {
+                System.out.println(compareInts(randNumb, answer));
                 attempts++;
-            }else{
-                System.out.println("Поздравляем! Вы угадали число с "+attempts+" попытки!");
+            } else {
+                System.out.println("Поздравляем! Вы угадали число с " + attempts + " попытки!");
             }
-        } while (answer!=randNumb);
+        } while (answer != randNumb);
 
     }
 
-    private static String compareInts (final int randNumb, final int answer){
-        if (randNumb>answer){
+    private static String compareInts(final int randNumb, final int answer) {
+        if (randNumb > answer) {
             return "Загаданное число больше!";
-        }else
+        } else
             return "Загаданное число меньше!";
 
     }
