@@ -11,6 +11,11 @@ import java.util.Scanner;
  */
 public class Deposit {
     public static void main(String[] args) {
+        final double percents = 0.03;
+        double money;
+        double years;
+        double wantMoney;
+
         Scanner scanner = new Scanner(System.in);
         int choice;
         System.out.println("Ваша процентная ставка по депозиту - 3% годовых\n" +
@@ -23,45 +28,46 @@ public class Deposit {
         while (!(choice == 1 || choice == 2));
 
         if (choice == 1) {
-            calcMonths(scanner); // в качестве параметра передается ссылка на уже созданный объект сканера.(IDE так автоматически сделала)
-            // Надеюсь, так можно сэкономить немного памяти и єто имеет смысл.
+            System.out.println("Сколько денег у Вас на депозите?");
+            money = scanner.nextDouble();
+            System.out.println("Введите количество месяцев:");
+            years = (scanner.nextDouble()) / 12;
+            System.out.println(calcMonths(money, years, percents));
         } else {
-            calcYears(scanner);
+            System.out.println("Сколько денег у Вас есть?");
+            money = scanner.nextDouble();
+            System.out.println("Введите необходимую сумму:");
+            wantMoney = scanner.nextDouble();
+            calcYears(money, wantMoney, percents);
         }
     }
 
-    private static void calcMonths(Scanner scanner) {
-        final double PERCENTS = 0.03;
-        System.out.println("Сколько денег у Вас на депозите?");
-        double money = scanner.nextDouble();
-        System.out.println("Введите количество месяцев:");
-        double years = (scanner.nextDouble()) / 12;
+    private static String calcMonths(double money, final double years, final double percents) {
         if (years < 1) {
-            System.out.println("За это время сумма Вашего депозита не изменится");
+            return "За это время сумма Вашего депозита не изменится";
         } else {
             for (int i = 1; i <= years; i++) {
-                money = money + money * PERCENTS;
+                money += money * percents; // simplified
             }
-            System.out.println("Сумма Вашего депозита будет следующей: " + money);
+            /** альтернативная формлула без использования цикла:
+             * money = 100 * Math.pow ((1+percents), years);
+             * но она не дает необходимую точность
+             */
+            return "Сумма Вашего депозита будет следующей: " + money;
         }
     }
 
-    private static void calcYears(Scanner scanner) {
-        final double PERCENTS = 0.03;
-        System.out.println("Сколько денег у Вас есть?");
-        double money = scanner.nextDouble();
-        System.out.println("Введите необходимую сумму:");
-        double wantMoney = scanner.nextDouble();
+    private static String calcYears(double money, final double wantMoney, final double percents) {
         int years = 0;
         if (wantMoney <= money) {
-            System.out.println("У Вас уже достаточно денег.");
+            return "У Вас уже достаточно денег.";
         } else {
-            do {
-                money = money + money * PERCENTS;
+            while (wantMoney < money) {
+                money += money * percents; // simplified
                 years++;
-            } while (money < wantMoney);
+            }
         }
-        System.out.println("Вам понадобится " + years + " лет.");
+        return "Вам понадобится " + years + " лет.";
     }
 
 }
