@@ -1,4 +1,4 @@
-package homeWork5.Rectangle;
+package homeWork5.rectangleTest;
 
 
 /**
