@@ -1,3 +1,5 @@
+package less01oct;
+
 import java.util.Scanner;
 /**
  * Created by IMulyar on 01.10.2015.
