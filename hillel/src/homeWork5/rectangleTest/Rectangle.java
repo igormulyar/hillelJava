@@ -8,7 +8,7 @@ public class Rectangle {
     private double xSide;
     private double ySide;
 
-    public Rectangle (double xSide, double ySide){
+    public Rectangle(double xSide, double ySide) {
         this.xSide = xSide;
         this.ySide = ySide;
     }
@@ -30,7 +30,7 @@ public class Rectangle {
     }
 
     @Override
-    public String toString(){
-        return "Стороны прямоуольника:\nx="+xSide+";\ny="+ySide+".";
+    public String toString() {
+        return "Стороны прямоуольника:\nx=" + xSide + ";\ny=" + ySide + ".";
     }
 }
