@@ -5,6 +5,8 @@ import java.util.Scanner;
 /**
  * Created by igor on 06.10.15.
  */
+
+// Макс, у меня ощущение, что я написал муть какую-то
 public class Main {
     public static void main(String[] args) {
 
