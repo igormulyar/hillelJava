@@ -14,11 +14,7 @@ public class RectangleTask {
     }
 
     public boolean hasSolution() {
-        if (discriminant((0.5 * p), s) < 0) {
-            return false;
-        } else {
-            return true;
-        }
+        return discriminant((0.5 * p), s) < 0;
     }
 
     public Rectangle getRectangle() {

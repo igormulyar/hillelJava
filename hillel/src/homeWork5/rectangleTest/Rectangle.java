@@ -13,19 +13,19 @@ public class Rectangle {
         this.ySide = ySide;
     }
 
-    public double getxSide() {
+    public double getXSide() {
         return xSide;
     }
 
-    public void setxSide(double xSide) {
+    public void setXSide(double xSide) {
         this.xSide = xSide;
     }
 
-    public double getySide() {
+    public double getYSide() {
         return ySide;
     }
 
-    public void setySide(double ySide) {
+    public void setYSide(double ySide) {
         this.ySide = ySide;
     }
 

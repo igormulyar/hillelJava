@@ -5,7 +5,6 @@ package homeWork5.encryption;
  */
 public class MessageEncryptor {
 
-    private String message;
     private String key;
 
     public MessageEncryptor(String key) {
@@ -15,6 +14,7 @@ public class MessageEncryptor {
     public String crypt(String message) {
         char[] charArrMessage = message.toCharArray();
         char[] charArrKey = key.toCharArray();
+
         int k = 0;
         for (int i = 0; i < charArrMessage.length; i++) {
             charArrMessage[i] ^= charArrKey[k];

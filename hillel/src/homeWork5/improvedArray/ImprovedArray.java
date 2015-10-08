@@ -9,16 +9,15 @@ import java.util.Arrays;
 // this task seems to be an introduction to Collections Framework. Looks like beta version of ArrayList
 
 public class ImprovedArray {
-    private int arrayLength = 10;
-    private String[] array = new String[arrayLength];
+    private String[] array = new String[10];
     private int elementsCounter = 0;
 
     public void add(String value) {
-        this.array[elementsCounter] = value;
-        elementsCounter++;
-        if (elementsCounter == arrayLength - 1) {
+        if (elementsCounter == array.length) {
             extendArray();
         }
+        this.array[elementsCounter] = value;
+        elementsCounter++;
     }
 
     public String get(int index) {
@@ -30,11 +29,7 @@ public class ImprovedArray {
     }
 
     public boolean equals(ImprovedArray other) {
-        if (this.size() == other.size() && Arrays.equals(this.array, other.array)) {
-            return true;
-        } else {
-            return false;
-        }
+        return Arrays.equals(this.array, other.array);
     }
 
     public String toString() {
@@ -52,12 +47,12 @@ public class ImprovedArray {
     }
 
     private void extendArray() {
-        String[] temp = array;
-        arrayLength *= 2;
-        array = new String[arrayLength];
+        /*String[] temp = array;
+        array = new String[array.length*2];
         for (int i = 0; i < temp.length; i++) {
             array[i] = temp[i];
-        }
+        }*/
+        array = Arrays.copyOf(array,array.length*2);
     }
 
 
