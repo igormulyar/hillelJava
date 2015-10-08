@@ -16,7 +16,7 @@ public class MessageEncryptor {
         char[] charArrKey = key.toCharArray();
 
         for (int i = 0; i < charArrMessage.length; i++) {
-            charArrMessage[i] ^= charArrKey[(i+charArrKey.length)%charArrKey.length];
+            charArrMessage[i] ^= charArrKey[i%charArrKey.length];
         }
        /* int k = 0;
         for (int i = 0; i < charArrMessage.length; i++) {

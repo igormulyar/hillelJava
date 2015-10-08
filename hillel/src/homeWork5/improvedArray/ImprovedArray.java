@@ -13,7 +13,7 @@ public class ImprovedArray {
     private int elementsCounter = 0;
 
     public void add(String value) {
-        if (elementsCounter > array.length-1) {
+        if (elementsCounter > array.length - 1) {
             extendArray();
         }
         this.array[elementsCounter] = value;
@@ -43,7 +43,7 @@ public class ImprovedArray {
     }
 
     public String[] toArray() {
-        return array;
+        return Arrays.copyOf(array, elementsCounter);
     }
 
     private void extendArray() {
@@ -52,7 +52,7 @@ public class ImprovedArray {
         for (int i = 0; i < temp.length; i++) {
             array[i] = temp[i];
         }*/
-        array = Arrays.copyOf(array,array.length*2);
+        array = Arrays.copyOf(array, array.length * 2);
     }
 
 

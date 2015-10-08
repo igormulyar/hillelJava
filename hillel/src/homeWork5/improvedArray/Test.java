@@ -23,6 +23,7 @@ public class Test {
         System.out.println("size after array extending: " + ia1.size());
         System.out.println("\nprinting elements using toArray():");
         String[] arr = ia1.toArray();
+        System.out.println("array length = "+arr.length);
         for (int i = 0; i < ia1.size(); i++) {
             System.out.println(arr[i]);
         }
