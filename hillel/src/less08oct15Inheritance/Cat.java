@@ -1,19 +1,19 @@
-package less05oct;
+package less08oct15Inheritance;
+
+import java.util.Objects;
 
 /**
  * Created by IMulyar on 05.10.2015.
  */
-public class Cat {
+public class Cat extends Animal {
     public static final boolean domestic = true;
     public static final boolean predator = true;
 
     private boolean pet; // in default is false
-    private int age; // in default is 0
-    private String name; // in default is null
-    private String color;
+    private String color;// in default is null
 
     public Cat (){
-        System.out.println("in empty constructor");
+       // System.out.println("in empty constructor");
     }
 
     public Cat (boolean pet, int age, String name, String color){
@@ -23,12 +23,30 @@ public class Cat {
         this.setColor(color);
     }
 
+    @Override
+    public String makeSound(){
+        return "Meow!";
+    }
 
-    public boolean equals (Cat other){
-        if (pet != other.pet)return false;
-        if (age != other.age) return false;
-        if (!name.equals(other.name)) return false;
-        if (!color.equals(other.color)) return false;
+    @Override
+    public String toString() {
+        return "Cat{" +
+                "pet=" + pet +
+                ", color='" + color + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals (Object otherObject){
+
+        if (!(otherObject instanceof Cat)) return false;
+
+        Cat otherCat = (Cat) otherObject;
+        System.out.println("in cats equals method");
+        if (pet != otherCat.pet)return false;
+        if (age != otherCat.age) return false;
+        if (!name.equals(otherCat.name)) return false;
+        if (!color.equals(otherCat.color)) return false;
         return true;
     }
 
