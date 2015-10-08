@@ -13,7 +13,7 @@ public class ImprovedArray {
     private int elementsCounter = 0;
 
     public void add(String value) {
-        if (elementsCounter == array.length) {
+        if (elementsCounter > array.length-1) {
             extendArray();
         }
         this.array[elementsCounter] = value;
