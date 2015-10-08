@@ -15,7 +15,10 @@ public class MessageEncryptor {
         char[] charArrMessage = message.toCharArray();
         char[] charArrKey = key.toCharArray();
 
-        int k = 0;
+        for (int i = 0; i < charArrMessage.length; i++) {
+            charArrMessage[i] ^= charArrKey[(i+charArrKey.length)%charArrKey.length];
+        }
+       /* int k = 0;
         for (int i = 0; i < charArrMessage.length; i++) {
             charArrMessage[i] ^= charArrKey[k];
             if (k == charArrKey.length - 1) {
@@ -23,7 +26,7 @@ public class MessageEncryptor {
             } else {
                 k++;
             }
-        }
+        }*/
         return String.copyValueOf(charArrMessage);
     }
 }
