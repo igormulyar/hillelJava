@@ -3,7 +3,7 @@ package homeWork6.animals;
 /**
  * Created by igor on 10.10.15.
  */
-public class WildAnimal extends Animal {
+public abstract class WildAnimal extends Animal {
 
     protected boolean isPredator;
 

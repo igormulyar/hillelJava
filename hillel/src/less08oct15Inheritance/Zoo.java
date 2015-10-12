@@ -12,10 +12,15 @@ public class Zoo {
 
         //System.out.println(tomCat1.makeSound());
 
-        Animal animal = new Animal();
+        // Animal animal = new Animal(); - ERROR because Animal is ABSTRACT
         Cat cat = new Cat();
         Animal animalCat = new Cat(); // can call only methods from superClass
 
+
+
+    }
+
+    public static void someCode(Animal animalCat) {
         String sound = animalCat.makeSound();
         System.out.println("cat as animal: " + sound);
         Object cat3 = new Cat();
@@ -33,7 +38,6 @@ public class Zoo {
         for (Object o : objects){
             System.out.println(o.toString());
         }
-
     }
 
     public static void referenceComparation() {

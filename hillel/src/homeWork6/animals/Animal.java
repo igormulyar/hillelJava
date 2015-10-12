@@ -3,7 +3,7 @@ package homeWork6.animals;
 /**
  * Created by igor on 10.10.15.
  */
-public class Animal {
+public abstract class Animal {
 
     protected int id;
     protected int age;
@@ -14,9 +14,7 @@ public class Animal {
         this.id = id;
     }
 
-    public String makeNoise(){
-        return "*some noise*";
-    }
+    public abstract String makeNoise(); //{return "*some noise*";}
 
     public void move (){
         System.out.println("Moving");
