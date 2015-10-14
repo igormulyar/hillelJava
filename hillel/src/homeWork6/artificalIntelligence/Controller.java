@@ -4,7 +4,7 @@ package homeWork6.artificalIntelligence;
  * Created by igor on 11.10.15.
  */
 
-// Controller and View in one class ((
+// 
 // Danger! GovnoCode detected!
 public class Controller {
     public static void main(String[] args) throws InterruptedException {
