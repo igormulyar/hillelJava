@@ -9,7 +9,7 @@ public class ImprovedArray {
     private Object [] array = new String[10];
     private int elementsCounter = 0;
 
-    public void add(String value) {
+    public void add(Object value) {
         if (elementsCounter > array.length - 1) {
             extendArray();
         }
