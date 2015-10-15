@@ -1,24 +1,27 @@
 package homeWork7;
 
 /**
- * Created by igor on 14.10.15.
+ * Created by TRUST on 15.10.2015.
  */
-public class Circle extends Shape {
+public class Paralellogram extends Shape {
 
     Paint color;
+    int side;
 
-    public Circle (int h){
-        hight = width = h;
+    public Paralellogram (int h, int w, int s){
+        hight = h;
+        width = w;
+        side = s;
     }
 
     @Override
     public int getArea() {
-        return (int) (Math.PI * hight * hight / 4);
+        return hight * width;
     }
 
     @Override
     public int getPerimeter() {
-        return (int) (Math.PI * hight);
+        return 2 * (width + side);
     }
 
     @Override

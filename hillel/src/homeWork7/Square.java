@@ -1,24 +1,24 @@
 package homeWork7;
 
 /**
- * Created by igor on 14.10.15.
+ * Created by TRUST on 15.10.2015.
  */
-public class Circle extends Shape {
+public class Square extends Shape {
 
     Paint color;
 
-    public Circle (int h){
+    public Square (int h){
         hight = width = h;
     }
 
     @Override
     public int getArea() {
-        return (int) (Math.PI * hight * hight / 4);
+        return hight*hight;
     }
 
     @Override
     public int getPerimeter() {
-        return (int) (Math.PI * hight);
+        return 4 * hight;
     }
 
     @Override

@@ -1,24 +1,25 @@
 package homeWork7;
 
 /**
- * Created by igor on 14.10.15.
+ * Created by TRUST on 15.10.2015.
  */
-public class Circle extends Shape {
+public class Rectangle extends Shape {
 
     Paint color;
 
-    public Circle (int h){
-        hight = width = h;
+    public Rectangle (int h, int w){
+        hight = h;
+        width = w;
     }
 
     @Override
     public int getArea() {
-        return (int) (Math.PI * hight * hight / 4);
+        return hight * width;
     }
 
     @Override
     public int getPerimeter() {
-        return (int) (Math.PI * hight);
+        return 2 * (hight + width);
     }
 
     @Override
