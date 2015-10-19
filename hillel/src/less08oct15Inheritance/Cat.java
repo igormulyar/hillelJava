@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * Created by IMulyar on 05.10.2015.
  */
-public class Cat extends Animal {
+public class Cat extends Animal implements Comparable<Cat> {
     public static final boolean domestic = true;
     public static final boolean predator = true;
 
@@ -89,5 +89,11 @@ public class Cat extends Animal {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+
+    @Override
+    public int compareTo(Cat o) {
+        return this.getName().compareTo(o.getName());
     }
 }
