@@ -43,4 +43,6 @@ public class Sorter {
         return arr;
     }
 
+    // хотел также реализовать quick sort, но.. ниасилил(( ..пока что
+
 }

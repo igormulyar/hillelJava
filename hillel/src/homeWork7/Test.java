@@ -5,16 +5,16 @@ package homeWork7;
  */
 public class Test {
     public static void main(String[] args) {
-        Shape shape = new Circle(4);
+        Shape shape = new Square(6);
         System.out.println("shape area = "+shape.getArea()+" shape perimeter = "+shape.getPerimeter());
         Paintable paintableShape = shape;
-        System.out.println("shape's color is referenced to "+paintableShape.showColor());
+        System.out.println("shape's color is referenced to "+paintableShape.getColor());
         Paint color = new Purple();
         paintableShape.paint(color);
-        System.out.println("Now the shape is "+paintableShape.showColor().toString()+".");
-        System.out.println("Paint consumption is "+paintableShape.showColor().getConsumptionPerMeter()+
+        System.out.println("Now the shape is "+paintableShape.getColor().toString()+".");
+        System.out.println("Paint consumption is "+paintableShape.getColor().getConsumptionPerMeter()+
                 " liters per square meter");
-        System.out.println(paintableShape.showConsumption()+" liters of paint was used to color the shape");
+        System.out.println(paintableShape.calculateConsumption()+" liters of paint was used to color the shape");
     }
 
 }

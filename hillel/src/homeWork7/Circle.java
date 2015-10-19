@@ -5,20 +5,21 @@ package homeWork7;
  */
 public class Circle extends Shape {
 
-    Paint color;
+    private Paint color;
+    private int diameter;
 
-    public Circle (int h){
-        hight = width = h;
+    public Circle (int diameter){
+        this.diameter = diameter;
     }
 
     @Override
     public int getArea() {
-        return (int) (Math.PI * hight * hight / 4);
+        return (int) (Math.PI * diameter * diameter / 4);
     }
 
     @Override
     public int getPerimeter() {
-        return (int) (Math.PI * hight);
+        return (int) (Math.PI * diameter);
     }
 
     @Override
@@ -27,12 +28,12 @@ public class Circle extends Shape {
     }
 
     @Override
-    public Paint showColor() {
+    public Paint getColor() {
         return this.color;
     }
 
     @Override
-    public int showConsumption() {
+    public int calculateConsumption() {
         return getArea() * this.color.getConsumptionPerMeter();
     }
 }

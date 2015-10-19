@@ -5,10 +5,10 @@ package homeWork6.animals;
  */
 public abstract class Animal {
 
-    protected int id;
-    protected int age;
-    protected int weigth;
-    protected String color;
+    private int id;
+    private int age;
+    private int weigth;
+    private String color;
 
     public Animal(int id) {
         this.id = id;

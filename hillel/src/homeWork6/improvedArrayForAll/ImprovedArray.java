@@ -43,15 +43,6 @@ public class ImprovedArray {
         return Arrays.copyOf(array, elementsCounter);
     }
 
-    private void extendArray() {
-        /*String[] temp = array;
-        array = new String[array.length*2];
-        for (int i = 0; i < temp.length; i++) {
-            array[i] = temp[i];
-        }*/
-        array = Arrays.copyOf(array, array.length * 2);
-    }
-
     // added in homeWork 6
     public boolean contains(Object obj){
         for (int i=0; i<size(); i++){
@@ -74,6 +65,15 @@ public class ImprovedArray {
                 elementsCounter--;
             }
         }
+    }
+
+    private void extendArray() {
+        /*String[] temp = array;
+        array = new String[array.length*2];
+        for (int i = 0; i < temp.length; i++) {
+            array[i] = temp[i];
+        }*/
+        array = Arrays.copyOf(array, array.length * 2);
     }
 
 }

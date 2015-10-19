@@ -5,23 +5,25 @@ package homeWork7;
  */
 public class Paralellogram extends Shape {
 
-    Paint color;
-    int side;
+    private Paint color;
+    private int hight;
+    private int a;
+    private int b;
 
-    public Paralellogram (int h, int w, int s){
+    public Paralellogram (int h, int a, int b){
         hight = h;
-        width = w;
-        side = s;
+        this.a = a;
+        this.b = b;
     }
 
     @Override
     public int getArea() {
-        return hight * width;
+        return hight * a;
     }
 
     @Override
     public int getPerimeter() {
-        return 2 * (width + side);
+        return 2 * (a + b);
     }
 
     @Override
@@ -30,12 +32,12 @@ public class Paralellogram extends Shape {
     }
 
     @Override
-    public Paint showColor() {
+    public Paint getColor() {
         return this.color;
     }
 
     @Override
-    public int showConsumption() {
+    public int calculateConsumption() {
         return getArea() * this.color.getConsumptionPerMeter();
     }
 }

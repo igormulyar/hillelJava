@@ -5,20 +5,21 @@ package homeWork7;
  */
 public class Square extends Shape {
 
-    Paint color;
+    private Paint color;
+    private int a;
 
-    public Square (int h){
-        hight = width = h;
+    public Square (int a){
+        this.a = a;
     }
 
     @Override
     public int getArea() {
-        return hight*hight;
+        return a*a;
     }
 
     @Override
     public int getPerimeter() {
-        return 4 * hight;
+        return 4 * a;
     }
 
     @Override
@@ -27,12 +28,12 @@ public class Square extends Shape {
     }
 
     @Override
-    public Paint showColor() {
+    public Paint getColor() {
         return this.color;
     }
 
     @Override
-    public int showConsumption() {
+    public int calculateConsumption() {
         return getArea() * this.color.getConsumptionPerMeter();
     }
 }

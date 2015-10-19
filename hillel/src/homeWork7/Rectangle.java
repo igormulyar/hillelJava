@@ -5,21 +5,23 @@ package homeWork7;
  */
 public class Rectangle extends Shape {
 
-    Paint color;
+    private Paint color;
+    private  int a;
+    private  int b;
 
-    public Rectangle (int h, int w){
-        hight = h;
-        width = w;
+    public Rectangle (int a, int b){
+        this.a = a;
+        this.b = b;
     }
 
     @Override
     public int getArea() {
-        return hight * width;
+        return a * b;
     }
 
     @Override
     public int getPerimeter() {
-        return 2 * (hight + width);
+        return 2 * (a + b);
     }
 
     @Override
@@ -28,12 +30,12 @@ public class Rectangle extends Shape {
     }
 
     @Override
-    public Paint showColor() {
+    public Paint getColor() {
         return this.color;
     }
 
     @Override
-    public int showConsumption() {
+    public int calculateConsumption() {
         return getArea() * this.color.getConsumptionPerMeter();
     }
 }

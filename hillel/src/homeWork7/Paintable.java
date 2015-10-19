@@ -7,7 +7,7 @@ public interface Paintable {
 
     public void paint (Paint color);
 
-    public Paint showColor();
+    public Paint getColor();
 
-    public int showConsumption();
+    public int calculateConsumption();
 }
