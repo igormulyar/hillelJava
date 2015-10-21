@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Created by igor on 20.10.15.
  */
 public class ImprovedArray {
-    private Object [] array = new String[10];
+    private Object [] array = new Object[10];
     private int elementsCounter = 0;
 
     public void add(Object value) {
@@ -68,11 +68,6 @@ public class ImprovedArray {
     }
 
     private void extendArray() {
-        /*String[] temp = array;
-        array = new String[array.length*2];
-        for (int i = 0; i < temp.length; i++) {
-            array[i] = temp[i];
-        }*/
         array = Arrays.copyOf(array, array.length * 2);
     }
 }
