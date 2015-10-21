@@ -1,4 +1,4 @@
-package HomeWork8;
+package garbage;
 
 /**
  * Created by igor on 17.10.15.
