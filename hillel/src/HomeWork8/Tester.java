@@ -11,25 +11,36 @@ public class Tester {
 
     @Test
     public void arrayHaveToBeSortedWithInsert() {
-        int[] array = {8, 2, 7, 3, 6, 4, 5, 1, 9};
+        int[] unsorted = {8, 2, 7, 3, 6, 4, 5, 1, 9};
+        int[] sorted;
         int[] expected = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-        InsertSort insertSort = new InsertSort();
-        insertSort.putArrayToSort(array);
-        insertSort.insertSort();
+        Sorter insertSort = new InsertSort();
+        sorted = insertSort.sort(unsorted);
 
-        Assert.assertArrayEquals("Something WRONG! ", expected, array);
+        Assert.assertArrayEquals("Something WRONG! Your array are not sorted!", expected, sorted);
     }
 
     @Test
     public void arrayHaveToBeSortedWithShell() {
-        int[] array = {8, 2, 7, 3, 6, 4, 5, 1, 9};
+        int[] unsorted = {8, 2, 7, 3, 6, 4, 5, 1, 9};
+        int[] sorted;
         int[] expected = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-        ShellSort shellSort = new ShellSort();
-        shellSort.putArrayToSort(array);
-        shellSort.shellSort();
+        Sorter shellSort = new ShellSort();
+        sorted = shellSort.sort(unsorted);
 
-        Assert.assertArrayEquals("Something WRONG! ", expected, array);
+        Assert.assertArrayEquals("Something WRONG! Your array are not sorted!", expected, sorted);
+    }
+
+    @Test
+    public void sourceArrayShouldBeUnsorted(){
+        int[] unsorted = {8, 2, 7, 3, 6, 4, 5, 1, 9};
+        int[] expected = {8, 2, 7, 3, 6, 4, 5, 1, 9};
+
+        Sorter sorter = new ShellSort();
+        sorter.sort(unsorted);
+
+        Assert.assertArrayEquals("Error. Source array are sorted. It have to be not sorted",expected, unsorted);
     }
 }

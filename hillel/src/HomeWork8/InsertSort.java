@@ -1,41 +1,24 @@
 package HomeWork8;
 
+import java.util.Arrays;
+
 /**
  * Created by igor on 20.10.15.
  */
-public class InsertSort {
+public class InsertSort implements Sorter {
 
-    private int[] arr;
-
-    public InsertSort() {
-    }
-
-    public InsertSort(int[] arr) {                      // сделал "на всякий случай" чисто для учебных целей
-        //this.arr = Arrays.copyOf(arr, arr.length);    // знаю, что он здесь не нужен
-        this.arr = arr;
-    }
-
-    public void putArrayToSort(int[] arr) {
-        this.arr = arr;
-    }
-
-    public int[] getArr() {
-        return arr;
-    }
-
-    public void insertSort() {
-        sort(1);                                        // потому что h в инсерте должен быть равен 1
-    }
-
-    public void sort(int h) {                           // принимает h, чтобы инсерт можно было
-        for (int out = h; out < arr.length; out++) {    // использовать в шелле
+    @Override
+    public int[] sort(int[] array) {
+        int[] arr = Arrays.copyOf(array, array.length);
+        for (int out = 1; out < arr.length; out++) {
             int temp = arr[out];
             int in = out;
-            while (in > h - 1 && arr[in - h] >= temp) {
-                arr[in] = arr[in - h];
-                in -= h;
+            while (in > 0 && arr[in - 1] >= temp) {
+                arr[in] = arr[in - 1];
+                in--;
             }
             arr[in] = temp;
         }
+        return arr;
     }
 }

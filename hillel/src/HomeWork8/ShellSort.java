@@ -1,30 +1,31 @@
 package HomeWork8;
 
+import java.util.Arrays;
+
 /**
  * Created by igor on 20.10.15.
  */
-public class ShellSort extends InsertSort {
+public class ShellSort implements Sorter {
 
-    public ShellSort() {
-    }
-
-    public ShellSort(int[] arr) {
-        super(arr);
-    }
-
-    public void putArrayToSort(int[] arr) {
-        super.putArrayToSort(arr);
-    }
-
-    public void shellSort() {
+    @Override
+    public int[] sort(int[] array) {
+        int[] arr = Arrays.copyOf(array, array.length);
         int h = 1;
-        while (h <= getArr().length / 3) {
+        while (h <= arr.length/3) {
             h = h * 3 + 1;
         }
         while (h > 0) {
-            sort(h);        // решил занаследовать метод инсерта, ибо инсерт вообще используется в шелле,
-                            // но я не уверен, что это хорошее решение, ибо усложняется чтение кода
+            for (int out = h; out < arr.length; out++) {
+                int temp = arr[out];
+                int in = out;
+                while (in > h - 1 && arr[in - h] >= temp) {
+                    arr[in] = arr[in - h];
+                    in -= h;
+                }
+                arr[in] = temp;
+            }
             h = (h - 1) / 3;
         }
+        return arr;
     }
 }
