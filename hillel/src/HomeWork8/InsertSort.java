@@ -23,7 +23,7 @@ public class InsertSort {
         return arr;
     }
 
-    public void insertSort (){
+    public void insertSort() {
         sort(1);                                        // потому что h в инсерте должен быть равен 1
     }
 
@@ -31,13 +31,11 @@ public class InsertSort {
         for (int out = h; out < arr.length; out++) {    // использовать в шелле
             int temp = arr[out];
             int in = out;
-            while (in > h-1 && arr[in - h] >= temp) {
+            while (in > h - 1 && arr[in - h] >= temp) {
                 arr[in] = arr[in - h];
-                in -=h;
+                in -= h;
             }
             arr[in] = temp;
         }
-
     }
-
 }

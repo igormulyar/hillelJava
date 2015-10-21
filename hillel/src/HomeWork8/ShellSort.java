@@ -5,9 +5,10 @@ package HomeWork8;
  */
 public class ShellSort extends InsertSort {
 
-    public ShellSort(){}
+    public ShellSort() {
+    }
 
-    public ShellSort(int[] arr){
+    public ShellSort(int[] arr) {
         super(arr);
     }
 
@@ -15,14 +16,14 @@ public class ShellSort extends InsertSort {
         super.putArrayToSort(arr);
     }
 
-    public void shellSort(){
+    public void shellSort() {
         int h = 1;
-        while (h <= getArr().length/3) {
+        while (h <= getArr().length / 3) {
             h = h * 3 + 1;
         }
         while (h > 0) {
-            sort(h);    // решил занаследовать метод инсерта, ибо инсерт вообще используется в шелле,
-                        // но я не уверен, что это хорошее решение, ибо усложняется чтение кода
+            sort(h);        // решил занаследовать метод инсерта, ибо инсерт вообще используется в шелле,
+                            // но я не уверен, что это хорошее решение, ибо усложняется чтение кода
             h = (h - 1) / 3;
         }
     }
