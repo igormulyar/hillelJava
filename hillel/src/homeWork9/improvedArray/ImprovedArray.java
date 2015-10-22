@@ -1,15 +1,16 @@
 package homeWork9.improvedArray;
 
 import java.util.Arrays;
+import homeWork9.improvedArray.sorters.*;
 
 /**
  * Created by igor on 20.10.15.
  */
 public class ImprovedArray {
-    private Object [] array = new Object[10];
+    private String [] array = new String[10];
     private int elementsCounter = 0;
 
-    public void add(Object value) {
+    public void add(String value) {
         if (elementsCounter > array.length - 1) {
             extendArray();
         }
@@ -18,7 +19,7 @@ public class ImprovedArray {
     }
 
     // since homeWork 9
-    public void add(int index, Object o){
+    public void add(int index, String o){
         if (elementsCounter > array.length - 1) {
             extendArray();
         }
@@ -28,11 +29,11 @@ public class ImprovedArray {
     }
 
     // since homeWork 9
-    public void set (int index, Object o){
+    public void set (int index, String o){
         array[index] = o;
     }
 
-    public Object get(int index) {
+    public String get(int index) {
         return array[index];
     }
 
@@ -54,12 +55,12 @@ public class ImprovedArray {
         return str;
     }
 
-    public Object[] toArray() {
+    public String[] toArray() {
         return Arrays.copyOf(array, elementsCounter);
     }
 
     // added in homeWork 6
-    public boolean contains(Object obj){
+    public boolean contains(String obj){
         for (int i=0; i<size(); i++){
             if (array[i].equals(obj)) return true;
         }
@@ -73,7 +74,7 @@ public class ImprovedArray {
         }
     }
     // added in homeWork 6
-    public void remove(Object obj){
+    public void remove(String obj){
         for (int i=0; i<size(); i++){
             if (array[i].equals(obj) && i != size()-1){
                 System.arraycopy(array, i+1, array, i, size()-i+1);
@@ -95,7 +96,39 @@ public class ImprovedArray {
         return elementsCounter == 0;
     }
 
+    // since homeWork 9
+    public String[] sort(){
+        Sorter sorter = new InsertSort();
+        array = sorter.sort(toArray());
+        return toArray();
+    }
+
+    public boolean containsForSorted(String obj){
+        //binary searching - не идеальный вариант, зато для меня понятен
+        String[] arr = sort();
+        int lower =0;
+        int upper = arr.length-1;
+        int currIndex;
+        String searched;
+        while(true){
+            currIndex = (lower+upper)/2;
+            if (arr[currIndex].compareTo(obj)==0){
+                return true;
+            }else if(lower>upper){
+                return false;
+            }else{
+                if (arr[currIndex].compareTo(obj)<0){
+                    lower = currIndex+1;
+                } else{
+                    upper = currIndex-1;
+                }
+            }
+        }
+    }
+
+
     private void extendArray() {
         array = Arrays.copyOf(array, array.length * 2);
     }
+
 }
