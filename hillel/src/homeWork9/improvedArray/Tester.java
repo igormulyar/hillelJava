@@ -153,33 +153,32 @@ public class Tester {
     @Test
     public void arrayShouldContainAddedByIndexElement (){
         ImprovedArray improvedArray = initImprArr();
-        improvedArray.add("added by index", 3);
+        improvedArray.add(3,"added by index");
         boolean actual = improvedArray.contains("added by index");
         Assert.assertEquals("array doesn't contain added element", true,actual);
     }
     @Test
     public void elementsAfterAddedMustBeShifted(){
         ImprovedArray improvedArray = initImprArr();
-        improvedArray.add("added by index", 3);
+        improvedArray.add(3,"added by index");
         Object expected = "element 4";
         Object actual = improvedArray.get(5);
         Assert.assertEquals("elements shifted not correctly or not shifted", expected, actual);
-
     }
     @Test
     public void sizeShouldBeIncreased(){
         ImprovedArray improvedArray = initImprArr();
-        improvedArray.add("added by index", 3);
+        improvedArray.add(3,"added by index");
         int expected = 6;
         int actually = improvedArray.size();
     }
 
 
-    //insert(Object o, index)
+    //set(Object o, index)
     @Test
     public void elementShouldBeChanged (){
         ImprovedArray improvedArray = initImprArr();
-        improvedArray.insert("element 3", 3);
+        improvedArray.set(3, "element 3");
         Object expected = "element 3";
         Object actual = improvedArray.get(3);
         Assert.assertEquals("The element has not been changed", expected, actual);
@@ -187,7 +186,7 @@ public class Tester {
     @Test
     public void sizeHaveNotBeenChanged (){
         ImprovedArray improvedArray = initImprArr();
-        improvedArray.insert("element 3", 3);
+        improvedArray.set(3, "element 3");
         int expected = 5;
         int actual = improvedArray.size();
         Assert.assertEquals("Size has been changed, but shouldn't!", expected, actual);
@@ -196,10 +195,10 @@ public class Tester {
 
     //clear()
     @Test
-    public void elementsShouldBeReferencedToNull(){
+    public void returnedArrayShouldBeClear(){
         ImprovedArray improvedArray = initImprArr();
         improvedArray.clear();
-        Object[] expected = {null, null, null, null, null};
+        Object[] expected = {};
         Object[] actual = improvedArray.toArray();
         Assert.assertArrayEquals("elements are not referenced to NULL", expected, actual);
     }
@@ -227,5 +226,4 @@ public class Tester {
         improvedArray.add("element 4");
         return improvedArray;
     }
-
 }

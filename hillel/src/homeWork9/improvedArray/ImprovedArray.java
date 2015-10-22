@@ -17,6 +17,21 @@ public class ImprovedArray {
         elementsCounter++;
     }
 
+    // since homeWork 9
+    public void add(int index, Object o){
+        if (elementsCounter > array.length - 1) {
+            extendArray();
+        }
+        System.arraycopy (array, index, array, index+1, size()-index);
+        array[index] = o;
+        elementsCounter++;
+    }
+
+    // since homeWork 9
+    public void set (int index, Object o){
+        array[index] = o;
+    }
+
     public Object get(int index) {
         return array[index];
     }
@@ -50,14 +65,14 @@ public class ImprovedArray {
         }
         return  false;
     }
-
+    // added in homeWork 6
     public void remove(int index){
         if (index<size()){
             System.arraycopy(array, index+1, array, index, size()-index+1);
             elementsCounter--;
         }
     }
-
+    // added in homeWork 6
     public void remove(Object obj){
         for (int i=0; i<size(); i++){
             if (array[i].equals(obj) && i != size()-1){
@@ -65,6 +80,19 @@ public class ImprovedArray {
                 elementsCounter--;
             }
         }
+    }
+
+    // since homeWork 9
+    public void clear(){
+        for (int i=0; i<size(); i++){
+            array[i] = null;
+        }
+        elementsCounter = 0;
+    }
+
+    // since homeWork 9
+    public boolean isEmpty (){
+        return elementsCounter == 0;
     }
 
     private void extendArray() {
