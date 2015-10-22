@@ -5,6 +5,6 @@ package homeWork9.improvedArray.sorters;
  */
 public interface Sorter {
 
-    String[] sort(String[] array);
+    Comparable[] sort(Comparable[] array);
 
 }

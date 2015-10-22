@@ -187,6 +187,7 @@ public class Tester {
         Object actual = improvedArray.get(3);
         Assert.assertEquals("The element has not been changed", expected, actual);
     }
+
     @Test
     public void sizeHaveNotBeenChanged() {
         ImprovedArray improvedArray = initImprArr();
@@ -220,7 +221,7 @@ public class Tester {
 
     //sort()
     @Test
-    public void arrayShouldBeOrdered(){
+    public void arrayShouldBeOrdered() {
         ImprovedArray improvedArray = new ImprovedArray();
         improvedArray.add("Киев");
         improvedArray.add("Одесса");
@@ -236,7 +237,7 @@ public class Tester {
 
     //containsForSorted(String obj)
     @Test
-    public void elementShouldBeFound(){
+    public void elementShouldBeFound() {
         ImprovedArray improvedArray = initImprArr();
         improvedArray.add("Киев");
         improvedArray.add("Одесса");
@@ -244,7 +245,7 @@ public class Tester {
         improvedArray.add("Алчевск");
         improvedArray.add("Черновцы");
         boolean actual = improvedArray.containsForSorted("Одесса");
-        Assert.assertTrue("Contained element hasn't been found",actual);
+        Assert.assertTrue("Contained element hasn't been found", actual);
     }
 
     // improvedArray  initialization method
