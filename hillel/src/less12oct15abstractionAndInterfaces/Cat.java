@@ -8,6 +8,7 @@ public class Cat extends Animal {
     boolean pet;
     String color;
 
+
     @Override
     public String makeSound() {
         return "Meow";

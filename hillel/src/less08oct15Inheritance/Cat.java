@@ -16,6 +16,13 @@ public class Cat extends Animal implements Comparable<Cat> {
        // System.out.println("in empty constructor");
     }
 
+    /**
+     * Constructs new Meow-Machine
+     * @param pet comment about pet
+     * @param age how much years
+     * @param name cat name
+     * @param color brush it!
+     */
     public Cat (boolean pet, int age, String name, String color){
         this.setPet(pet);
         this.setAge(age);

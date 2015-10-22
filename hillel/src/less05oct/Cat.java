@@ -1,9 +1,11 @@
 package less05oct;
 
+import java.util.Comparator;
+
 /**
  * Created by IMulyar on 05.10.2015.
  */
-public class Cat {
+public class Cat implements Comparable<Cat> {
     public static final boolean domestic = true;
     public static final boolean predator = true;
 
@@ -30,6 +32,14 @@ public class Cat {
         if (!name.equals(other.name)) return false;
         if (!color.equals(other.color)) return false;
         return true;
+    }
+
+    @Override
+    public int compareTo(Cat o){
+        if(this.equals(o)){
+            return 0;
+        }
+        return this.name.compareTo(o.getName());
     }
 
 

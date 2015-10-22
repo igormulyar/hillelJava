@@ -16,8 +16,6 @@ public class Zoo {
         Cat cat = new Cat();
         Animal animalCat = new Cat(); // can call only methods from superClass
 
-
-
     }
 
     public static void someCode(Animal animalCat) {
