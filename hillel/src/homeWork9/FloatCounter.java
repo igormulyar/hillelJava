@@ -13,17 +13,18 @@ public class FloatCounter {
                         2.000001F,
                         1.000001F}; //
 
+        // конвертирование из флота в стринг похоже на костыль, но
+        // зато при засовываении его в BigDecimal он всё работает без погрешности (вроде бы как)
         String[] strArr = new String[array.length];
+        for (int i =0; i<array.length; i++){
+            strArr [i] = String.valueOf(array[i]);
+        }
 
-//        float result=0;
-//        for (int i = 0; i<array.length; i++){
-//            result +=array[i];
-//        } // result is 13.400004  but should be 13.00005
 
-        BigDecimal result = new BigDecimal(array[0]);
+        BigDecimal result = new BigDecimal(strArr[0]);
         for (int i = 1; i < array.length; i++) {
 
-            result = result.add(new BigDecimal(array[i]));
+            result = result.add(new BigDecimal(strArr[i]));
         }
 
         System.out.println(result);
