@@ -39,11 +39,13 @@ public class CustomLinkedList {
             return null;
         } else {
             ListElement current = head;
-            int counter = index;
-            while (counter != 0 && current.next != null){
-
-
+            for (int i = index; i != 0; i--) {
+                if (current.next == null) {
+                   return null;
+                }
+                current = current.next;
             }
+            return current.value;
         }
     }
 }
