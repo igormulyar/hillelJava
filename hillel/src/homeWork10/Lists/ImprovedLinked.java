@@ -117,14 +117,11 @@ public class ImprovedLinked implements ImprovedList {
 
     //inner class
     class ListElement {
+        Comparable value;
+        ListElement next;
 
         ListElement(Comparable value) {
             this.value = value;
         }
-
-        Comparable value;
-
-        ListElement next;
-
     }
 }
