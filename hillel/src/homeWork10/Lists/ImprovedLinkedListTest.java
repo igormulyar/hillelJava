@@ -10,7 +10,7 @@ public class ImprovedLinkedListTest {
 
     //add(o)
     @Test
-    public void sizeChangedOnAdd(){
+    public void sizeChangedOnAdd() {
         ImprovedLinked list = new ImprovedLinked();
 
         Assert.assertEquals(0, list.size());
@@ -24,7 +24,7 @@ public class ImprovedLinkedListTest {
 
     // add (index, o)
     @Test
-    public void valueAndSizeChangedWhenAddByIndex(){
+    public void valueAndSizeChangedWhenAddByIndex() {
         ImprovedLinked list = new ImprovedLinked();
         list.add("First");
         list.add("Second");
@@ -38,7 +38,7 @@ public class ImprovedLinkedListTest {
 
     //set
     @Test
-    public void valueChangedButSizeNotWhenSet(){
+    public void valueChangedButSizeNotWhenSet() {
         ImprovedLinked list = new ImprovedLinked();
         list.add("First");
         list.add("Second");
@@ -52,7 +52,7 @@ public class ImprovedLinkedListTest {
 
     // equals
     @Test
-    public void everyElemShouldBeEqual () {
+    public void everyElemShouldBeEqual() {
         ImprovedLinked list = new ImprovedLinked();
         list.add("First");
         list.add("Second");
@@ -62,13 +62,13 @@ public class ImprovedLinkedListTest {
         list2.add("Second");
         list2.add("Third");
         Assert.assertFalse(list.equals(list2));
-        list2.set(0,"First");
+        list2.set(0, "First");
         Assert.assertTrue(list.equals(list2));
     }
 
     //toArray
     @Test
-    public void arrayShoudAgreeWithList(){
+    public void arrayShoudAgreeWithList() {
         ImprovedLinked list = new ImprovedLinked();
         list.add("First");
         list.add("Second");
@@ -79,7 +79,7 @@ public class ImprovedLinkedListTest {
 
     //contains
     @Test
-    public void shouldFindTheObject (){
+    public void shouldFindTheObject() {
         ImprovedLinked list = new ImprovedLinked();
         list.add("First");
         list.add("Second");
@@ -91,7 +91,7 @@ public class ImprovedLinkedListTest {
 
     //remove (index)
     @Test
-    public void sizeShouldBeDecreasedAndObjectDeleted (){
+    public void sizeShouldBeDecreasedAndObjectDeleted() {
         ImprovedLinked list = new ImprovedLinked();
         list.add("First");
         list.add("Second");
@@ -99,14 +99,14 @@ public class ImprovedLinkedListTest {
         list.add("Fourth");
         list.remove(0);
         list.remove(1);
-        Assert.assertEquals(2,list.size());
-        Comparable[] expected = {"Second","Fourth"};
+        Assert.assertEquals(2, list.size());
+        Comparable[] expected = {"Second", "Fourth"};
         Assert.assertArrayEquals(expected, list.toArray());
     }
 
     //remove(obj)
     @Test
-    public void sizeShouldBeDecreasedAndObjectDeletedByObj (){
+    public void sizeShouldBeDecreasedAndObjectDeletedByObj() {
         ImprovedLinked list = new ImprovedLinked();
         list.add("First");
         list.add("Second");
@@ -114,26 +114,26 @@ public class ImprovedLinkedListTest {
         list.add("Fourth");
         list.remove("First");
         list.remove("Third");
-        Assert.assertEquals(2,list.size());
-        Comparable[] expected = {"Second","Fourth"};
+        Assert.assertEquals(2, list.size());
+        Comparable[] expected = {"Second", "Fourth"};
         Assert.assertArrayEquals(expected, list.toArray());
     }
 
     //clear
     @Test
-    public void sizeShouldBeZero () {
+    public void sizeShouldBeZero() {
         ImprovedLinked list = new ImprovedLinked();
         list.add("First");
         list.add("Second");
         list.add("Third");
         list.add("Fourth");
         list.clear();
-        Assert.assertEquals(0,list.size());
+        Assert.assertEquals(0, list.size());
     }
 
     //isEmpty
     @Test
-    public void sizeShouldBeZeroIfEmptyAndFalseIfContains (){
+    public void sizeShouldBeZeroIfEmptyAndFalseIfContains() {
         ImprovedLinked list = new ImprovedLinked();
         list.add("First");
         list.add("Second");
@@ -147,7 +147,7 @@ public class ImprovedLinkedListTest {
 
     //toString
     @Test
-    public void toStringShouldReturnALineOfTextElements () {
+    public void toStringShouldReturnALineOfTextElements() {
         ImprovedLinked list = new ImprovedLinked();
         list.add("First");
         list.add("Second");

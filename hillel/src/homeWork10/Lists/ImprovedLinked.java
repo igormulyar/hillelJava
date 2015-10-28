@@ -40,7 +40,7 @@ public class ImprovedLinked implements ImprovedList {
 
     @Override
     public void set(int index, Comparable o) {
-        if (index == 0){
+        if (index == 0) {
             head.value = o;
         } else {
             ListElement current = head;
@@ -53,11 +53,11 @@ public class ImprovedLinked implements ImprovedList {
 
     @Override
     public Comparable get(int index) {
-        if (index == 0){
+        if (index == 0) {
             return head.value;
         } else {
             ListElement current = head;
-            for(int i =1; i <= index; i++){
+            for (int i = 1; i <= index; i++) {
                 current = current.next;
             }
             return current.value;
@@ -81,14 +81,14 @@ public class ImprovedLinked implements ImprovedList {
 
     @Override
     public boolean equals(ImprovedList other) {
-        if (!(other instanceof ImprovedLinked)){
+        if (!(other instanceof ImprovedLinked)) {
             return false;
         }
-        if (this.size() != other.size()){
+        if (this.size() != other.size()) {
             return false;
         }
-        for (int i=0; i<size(); i++){
-            if (this.get(i) != other.get(i)){
+        for (int i = 0; i < size(); i++) {
+            if (this.get(i) != other.get(i)) {
                 return false;
             }
         }
@@ -97,12 +97,12 @@ public class ImprovedLinked implements ImprovedList {
 
     @Override
     public String toString() {
-        if (!this.isEmpty()){
+        if (!this.isEmpty()) {
             ListElement current = head;
-            String str = current.value.toString() +" ";
-            for (int i=1; i<this.size(); i++){
+            String str = current.value.toString() + " ";
+            for (int i = 1; i < this.size(); i++) {
                 current = current.next;
-                str +=current.value.toString()+" ";
+                str += current.value.toString() + " ";
             }
             return str;
         } else {
@@ -116,7 +116,7 @@ public class ImprovedLinked implements ImprovedList {
         int arrSize = this.size();
         Comparable[] array = new Comparable[arrSize];
         ListElement current = head;
-        for (int i =0; i<arrSize; i++){
+        for (int i = 0; i < arrSize; i++) {
             array[i] = current.value;
             current = current.next;
         }
@@ -126,8 +126,8 @@ public class ImprovedLinked implements ImprovedList {
     @Override
     public boolean contains(Comparable obj) {
         ListElement current = head;
-        for (int i=0; i<this.size();i++){
-            if (current.value.compareTo(obj) == 0){
+        for (int i = 0; i < this.size(); i++) {
+            if (current.value.compareTo(obj) == 0) {
                 return true;
             }
             current = current.next;
@@ -137,11 +137,11 @@ public class ImprovedLinked implements ImprovedList {
 
     @Override
     public void remove(int index) {
-        if (index == 0){
+        if (index == 0) {
             head = head.next;
         } else {
             ListElement beforeDeleted = head;
-            for (int i=0; i<index-1; i++){
+            for (int i = 0; i < index - 1; i++) {
                 beforeDeleted = beforeDeleted.next;
             }
             beforeDeleted.next = beforeDeleted.next.next;
@@ -150,16 +150,16 @@ public class ImprovedLinked implements ImprovedList {
 
     @Override
     public void remove(Comparable obj) {
-        if (head.value.compareTo(obj) == 0){
+        if (head.value.compareTo(obj) == 0) {
             head = head.next;
         } else {
             ListElement current = head;
             ListElement beforeCurrent = null;
-            while(current.value.compareTo(obj) != 0){
+            while (current.value.compareTo(obj) != 0) {
                 beforeCurrent = current;
                 current = current.next;
             }
-            beforeCurrent.next  = beforeCurrent.next.next;
+            beforeCurrent.next = beforeCurrent.next.next;
         }
     }
 
@@ -170,12 +170,8 @@ public class ImprovedLinked implements ImprovedList {
 
     @Override
     public boolean isEmpty() {
-        if (head == null){
-            return true;
-        }
-        return false;
+        return head == null;
     }
-
 
 
     //inner class
