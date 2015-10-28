@@ -23,7 +23,9 @@ public class ImprovedLinked implements ImprovedList {
     @Override
     public void add(int index, Comparable o) {
         if (index == 0) {
-            head.value = o;
+            ListElement temp = head;
+            head = new ListElement(o);
+            head.next = temp;
         } else {
             ListElement beforeNewElement = head;
             for (int i = 1; i < index; i++) {
@@ -38,7 +40,7 @@ public class ImprovedLinked implements ImprovedList {
 
     @Override
     public void set(int index, Comparable o) {
-
+        if ()
     }
 
     @Override
