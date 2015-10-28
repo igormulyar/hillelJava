@@ -43,8 +43,8 @@ public class ImprovedArray implements ImprovedList {
         return elementsCounter;
     }
 
-    public boolean equals(ImprovedArray other) {
-        return Arrays.equals(this.array, other.array);
+    public boolean equals(ImprovedList other) {
+        return Arrays.equals(this.toArray(), other.toArray());
     }
 
     public String toString() {

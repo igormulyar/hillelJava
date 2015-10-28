@@ -15,7 +15,7 @@ public interface ImprovedList {
 
     int size();
 
-    boolean equals(ImprovedArray other);
+    boolean equals(ImprovedList other);
 
     String toString();
 
@@ -31,8 +31,6 @@ public interface ImprovedList {
 
     boolean isEmpty();
 
-    Comparable[] sort();
 
-    boolean containsForSorted(Comparable obj);
 
 }

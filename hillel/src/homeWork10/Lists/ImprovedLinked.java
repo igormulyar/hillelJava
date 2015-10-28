@@ -40,7 +40,15 @@ public class ImprovedLinked implements ImprovedList {
 
     @Override
     public void set(int index, Comparable o) {
-        if ()
+        if (index == 0){
+            head.value = o;
+        } else {
+            ListElement current = head;
+            for (int i = 0; i < index; i++) {
+                current = current.next;
+            }
+            current.value = o;
+        }
     }
 
     @Override
@@ -72,49 +80,102 @@ public class ImprovedLinked implements ImprovedList {
     }
 
     @Override
-    public boolean equals(ImprovedArray other) {
-        return false;
+    public boolean equals(ImprovedList other) {
+        if (!(other instanceof ImprovedLinked)){
+            return false;
+        }
+        if (this.size() != other.size()){
+            return false;
+        }
+        for (int i=0; i<size(); i++){
+            if (this.get(i) != other.get(i)){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        if (!this.isEmpty()){
+            ListElement current = head;
+            String str = current.value.toString() +" ";
+            for (int i=1; i<this.size(); i++){
+                current = current.next;
+                str +=current.value.toString()+" ";
+            }
+            return str;
+        } else {
+            return "list is empty";
+        }
+
     }
 
     @Override
     public Comparable[] toArray() {
-        return new Comparable[0];
+        int arrSize = this.size();
+        Comparable[] array = new Comparable[arrSize];
+        ListElement current = head;
+        for (int i =0; i<arrSize; i++){
+            array[i] = current.value;
+            current = current.next;
+        }
+        return array;
     }
 
     @Override
     public boolean contains(Comparable obj) {
+        ListElement current = head;
+        for (int i=0; i<this.size();i++){
+            if (current.value.compareTo(obj) == 0){
+                return true;
+            }
+            current = current.next;
+        }
         return false;
     }
 
     @Override
     public void remove(int index) {
-
+        if (index == 0){
+            head = head.next;
+        } else {
+            ListElement beforeDeleted = head;
+            for (int i=0; i<index-1; i++){
+                beforeDeleted = beforeDeleted.next;
+            }
+            beforeDeleted.next = beforeDeleted.next.next;
+        }
     }
 
     @Override
     public void remove(Comparable obj) {
-
+        if (head.value.compareTo(obj) == 0){
+            head = head.next;
+        } else {
+            ListElement current = head;
+            ListElement beforeCurrent = null;
+            while(current.value.compareTo(obj) != 0){
+                beforeCurrent = current;
+                current = current.next;
+            }
+            beforeCurrent.next  = beforeCurrent.next.next;
+        }
     }
 
     @Override
     public void clear() {
-
+        head = null;
     }
 
     @Override
     public boolean isEmpty() {
+        if (head == null){
+            return true;
+        }
         return false;
     }
 
-    @Override
-    public Comparable[] sort() {
-        return new Comparable[0];
-    }
-
-    @Override
-    public boolean containsForSorted(Comparable obj) {
-        return false;
-    }
 
 
     //inner class
