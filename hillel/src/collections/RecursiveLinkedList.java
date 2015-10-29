@@ -1,9 +1,13 @@
 package collections;
 
+import iterator.RecursiveLinkedListIterator;
+
+import java.util.Iterator;
+
 /**
  * Created by IMulyar on 26.10.2015.
  */
-public class RecursiveLinkedList {
+public class RecursiveLinkedList implements Iterable {
 
     private ListElement head;
 
@@ -31,5 +35,14 @@ public class RecursiveLinkedList {
         } else {
             return head.get(index);
         }
+    }
+
+    public ListElement getHead() {
+        return head;
+    }
+
+    @Override
+    public Iterator iterator() {
+        return new RecursiveLinkedListIterator(this);
     }
 }

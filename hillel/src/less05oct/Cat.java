@@ -43,10 +43,15 @@ public class Cat implements Comparable<Cat> {
     }
 
 
-
-
-
-
+    @Override
+    public String toString() {
+        return "Cat{" +
+                "pet=" + pet +
+                ", age=" + age +
+                ", name='" + name + '\'' +
+                ", color='" + color + '\'' +
+                '}';
+    }
 
 
 

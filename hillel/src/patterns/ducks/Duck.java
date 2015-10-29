@@ -5,13 +5,17 @@ package patterns.ducks;
  */
 public abstract class Duck {
 
+    FlyBehavior flyBehavior;
+    QuackBehavior quackBehavior;
+
     public String quack(){
-        return "quack";
+        return quackBehavior.quack();
     }
+
     abstract String display();
 
     public String fly () {
-        return "i'm flying!";
+        return flyBehavior.fly();
     }
 
     public String swim(){

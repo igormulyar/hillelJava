@@ -5,9 +5,9 @@ package patterns.ducks;
  */
 public class Decoy extends  Duck {
 
-    @Override
-    public String fly() {
-        return "fly no way";
+    public Decoy (){
+        flyBehavior = new FlyNoWay();
+        quackBehavior = new Quack();
     }
 
     @Override

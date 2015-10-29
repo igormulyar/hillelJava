@@ -5,6 +5,11 @@ package patterns.ducks;
  */
 public class MallardDuck extends Duck {
 
+    public MallardDuck(){
+        flyBehavior = new Fly();
+        quackBehavior = new Quack();
+    }
+
     @Override
     public String display(){
         return "mallard duck";
