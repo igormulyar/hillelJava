@@ -3,6 +3,7 @@ package homeWork11;
 import org.junit.Assert;
 import org.junit.Test;
 
+import javax.imageio.ImageReadParam;
 import java.util.Arrays;
 import java.util.Iterator;
 
@@ -269,6 +270,7 @@ public class ImprovedListTest {
         Assert.assertTrue(improvedArray.iterator() instanceof Iterator);
     }
 
+    // iterator's hasNext() and next()
     @Test
     public void iteratorShouldWorkCorrectly(){
         ImprovedArray improvedArray = initImprArr();
@@ -280,5 +282,17 @@ public class ImprovedListTest {
         Assert.assertEquals("3",iterator.next());
         Assert.assertEquals("element 4",iterator.next());
         Assert.assertFalse(iterator.hasNext());
+    }
+
+    @Test
+    public void iteratorsRemoveShouldRemoved () {
+        ImprovedArray improvedArray = initImprArr();
+        Iterator iterator = improvedArray.iterator();
+        iterator.next();
+        iterator.next();
+        iterator.remove();
+        Comparable[] expected = {"element 0", "element 1", "3", "element 4"};
+        Comparable[] actual = improvedArray.toArray();
+        Assert.assertArrayEquals(expected,actual);
     }
 }
