@@ -14,14 +14,14 @@ public class ForEachImprovedArray {
         list.add("third");
         list.add("Fourth");
 
-        for(Comparable o : list){
+        for (Comparable o : list) {
             System.out.println(o.toString());
         }
         System.out.println();
 
         list.sort();
 
-        for(Comparable o : list){
+        for (Comparable o : list) {
             System.out.println(o.toString());
         }
     }

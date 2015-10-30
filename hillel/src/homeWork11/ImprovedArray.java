@@ -152,7 +152,6 @@ public class ImprovedArray implements ImprovedList, Iterable<Comparable> {
     }
 
 
-
     //since homeWork11
 
     @Override
@@ -160,7 +159,7 @@ public class ImprovedArray implements ImprovedList, Iterable<Comparable> {
         return new Iter(this);
     }
 
-    private class Iter implements Iterator{
+    private class Iter implements Iterator {
 
         private final ImprovedArray list;
         int cursorIndex;

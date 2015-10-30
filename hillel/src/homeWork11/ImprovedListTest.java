@@ -203,7 +203,7 @@ public class ImprovedListTest {
     //clear()
     @Test
     public void returnedArrayShouldBeClear() {
-       ImprovedArray improvedArray = initImprArr();
+        ImprovedArray improvedArray = initImprArr();
         improvedArray.clear();
         Object[] expected = {};
         Object[] actual = improvedArray.toArray();
@@ -265,27 +265,27 @@ public class ImprovedListTest {
 
     //ImprovedList iterator
     @Test
-    public void iteratorShouldReturnIterator(){
+    public void iteratorShouldReturnIterator() {
         ImprovedArray improvedArray = initImprArr();
         Assert.assertTrue(improvedArray.iterator() instanceof Iterator);
     }
 
     // iterator's hasNext() and next()
     @Test
-    public void iteratorShouldWorkCorrectly(){
+    public void iteratorShouldWorkCorrectly() {
         ImprovedArray improvedArray = initImprArr();
         Iterator iterator = improvedArray.iterator();
-        Assert.assertEquals("element 0",iterator.next());
+        Assert.assertEquals("element 0", iterator.next());
         Assert.assertTrue(iterator.hasNext());
-        Assert.assertEquals("element 1",iterator.next());
-        Assert.assertEquals("element 2",iterator.next());
-        Assert.assertEquals("3",iterator.next());
-        Assert.assertEquals("element 4",iterator.next());
+        Assert.assertEquals("element 1", iterator.next());
+        Assert.assertEquals("element 2", iterator.next());
+        Assert.assertEquals("3", iterator.next());
+        Assert.assertEquals("element 4", iterator.next());
         Assert.assertFalse(iterator.hasNext());
     }
 
     @Test
-    public void iteratorsRemoveShouldRemoved () {
+    public void iteratorsRemoveShouldRemoved() {
         ImprovedArray improvedArray = initImprArr();
         Iterator iterator = improvedArray.iterator();
         iterator.next();
@@ -293,6 +293,6 @@ public class ImprovedListTest {
         iterator.remove();
         Comparable[] expected = {"element 0", "element 1", "3", "element 4"};
         Comparable[] actual = improvedArray.toArray();
-        Assert.assertArrayEquals(expected,actual);
+        Assert.assertArrayEquals(expected, actual);
     }
 }
