@@ -36,8 +36,5 @@ public class MainIterator {
         for(Object o : cats ){
             System.out.println(o);
         }
-
-
-
     }
 }
