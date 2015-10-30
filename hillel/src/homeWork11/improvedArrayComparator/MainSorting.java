@@ -8,10 +8,10 @@ import less05oct.Cat;
  */
 public class MainSorting {
     public static void main(String[] args) {
-        Cat murka = new Cat (true, 2, "Murka", "Grey");
-        Cat kuzya = new Cat (true, 3, "Kuzya", "Red");
-        Cat jora = new Cat (false, 5, "Jora", "BlackAndWhite");
-        Cat vasiliy = new Cat (false, 1, "Vasiliy", "Grey");
+        Cat murka = new Cat(true, 2, "Murka", "Grey");
+        Cat kuzya = new Cat(true, 3, "Kuzya", "Red");
+        Cat jora = new Cat(false, 5, "Jora", "BlackAndWhite");
+        Cat vasiliy = new Cat(false, 1, "Vasiliy", "Grey");
 
         ImprovedArray list = new ImprovedArray();
         list.add(murka);
@@ -34,7 +34,7 @@ public class MainSorting {
     }
 
     private static void printList(ImprovedArray list) {
-        for (Object o : list){
+        for (Object o : list) {
             System.out.println(o.toString());
         }
     }

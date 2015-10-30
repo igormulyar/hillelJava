@@ -118,17 +118,16 @@ public class ImprovedArray implements Iterable<Object> {
 
     // since homeWork 11
     public void sort(Comparator comparator) {
-            for (int out = 1; out < size(); out++) {
-                Object temp = array[out];
-                int in = out;
-                while (in > 0 && comparator.compare(array[in-1], temp) >= 0) {
-                    array[in] = array[in - 1];
-                    in--;
-                }
-                array[in] = temp;
+        for (int out = 1; out < size(); out++) {
+            Object temp = array[out];
+            int in = out;
+            while (in > 0 && comparator.compare(array[in - 1], temp) >= 0) {
+                array[in] = array[in - 1];
+                in--;
             }
+            array[in] = temp;
+        }
     }
-
 
 
     private void extendArray() {
