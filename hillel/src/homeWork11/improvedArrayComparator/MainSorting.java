@@ -55,7 +55,7 @@ public class MainSorting {
         Cat{pet=false, age=5, name='Jora', color='BlackAndWhite'}
 
         After sorting by Name:
-        Cat{pet=false, age=1, name='Vasiliy', color='Grey'}
         Cat{pet=false, age=5, name='Jora', color='BlackAndWhite'}
+        Cat{pet=true, age=3, name='Kuzya', color='Red'}
         Cat{pet=true, age=2, name='Murka', color='Grey'}
-        Cat{pet=true, age=3, name='Kuzya', color='Red'}*/
+        Cat{pet=false, age=1, name='Vasiliy', color='Grey'}*/
