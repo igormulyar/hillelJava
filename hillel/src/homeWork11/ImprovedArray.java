@@ -182,7 +182,7 @@ public class ImprovedArray implements ImprovedList, Iterable<Comparable> {
 
         @Override
         public void remove() {
-
+            list.remove(cursorIndex);
         }
     }
 }

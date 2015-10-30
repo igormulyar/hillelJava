@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Iterator;
 
 /**
  * Created by TRUST on 21.10.2015.
@@ -76,7 +77,7 @@ public class ImprovedListTest {
     @Test
     public void arraysShouldBeEqual() {
         ImprovedArray improvedArray = initImprArr();
-        Object[] expected = {"element 0", "element 1", "element 2", 3, "element 4"};
+        Object[] expected = {"element 0", "element 1", "element 2", "3", "element 4"};
         Object[] actual = improvedArray.toArray();
         Assert.assertArrayEquals("Arrays are not equal", expected, actual);
         Object[] expected2 = {"1", "2", "3"};
@@ -257,5 +258,27 @@ public class ImprovedListTest {
         improvedArray.add("3");
         improvedArray.add("element 4");
         return improvedArray;
+    }
+
+    // since homeWork11
+
+    //ImprovedList iterator
+    @Test
+    public void iteratorShouldReturnIterator(){
+        ImprovedArray improvedArray = initImprArr();
+        Assert.assertTrue(improvedArray.iterator() instanceof Iterator);
+    }
+
+    @Test
+    public void iteratorShouldWorkCorrectly(){
+        ImprovedArray improvedArray = initImprArr();
+        Iterator iterator = improvedArray.iterator();
+        Assert.assertEquals("element 0",iterator.next());
+        Assert.assertTrue(iterator.hasNext());
+        Assert.assertEquals("element 1",iterator.next());
+        Assert.assertEquals("element 2",iterator.next());
+        Assert.assertEquals("3",iterator.next());
+        Assert.assertEquals("element 4",iterator.next());
+        Assert.assertFalse(iterator.hasNext());
     }
 }
