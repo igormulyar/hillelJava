@@ -1,6 +1,6 @@
 package patterns.comparator;
 
-import jdk.nashorn.internal.runtime.RewriteException;
+
 import less05oct.Cat;
 
 import java.util.ArrayList;
