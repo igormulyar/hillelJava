@@ -11,14 +11,14 @@ public class Operations {
 //        res++;
 //        ++res;
 //
-//        print(res++);
+//        display(res++);
 //        //постфиксная операция
 //
-//        print(++res);
+//        display(++res);
 //        //префиксная операция
 //
 //        int mod = 5%4;
-//        print(mod);
+//        display(mod);
 
         // побитовые опирации
         /**

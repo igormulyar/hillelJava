@@ -19,8 +19,8 @@ public class AboutMyself {
         * System.out.println(fullName);
         *
         * one more:
-        * System.out.print(name);
-        * System.out.print(" ");
+        * System.out.display(name);
+        * System.out.display(" ");
         * System.out.println(surname);
         *
         * and more:
