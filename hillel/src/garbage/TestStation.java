@@ -3,13 +3,15 @@ package garbage;
 import homeWork9.improvedArray.ImprovedArray;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by TRUST on 22.10.2015.
  */
 public class TestStation {
     public static void main(String[] args) {
-        List<Integer> list = new ArrayList<Integer>();
+        Set<Integer> set = new HashSet<>();
     }
 }
