@@ -11,11 +11,13 @@ public class MyHashSet {
     private int count = 0;
 
     public void add (Object o){
+        if (!contains(o)){
         if(count > 0.7*array.length){
             extendArray();
         }
-        array[Math.abs(o.hashCode()%array.length)].add(o);
+        array[calcHashIndex(o)].add(o);
         count++;
+        }
     }
 
     public void remove (Object o){
@@ -47,10 +49,17 @@ public class MyHashSet {
         LinkedList[] newArray = new LinkedList[array.length*3];
         for (LinkedList list : array){
             for(Object obj : list){
-                newArray[Math.abs(obj.hashCode()%newArray.length)].add(obj);
+                newArray[calcHashIndex(obj)].add(obj);
             }
         }
         array = newArray;
+    }
+
+    private int calcHashIndex(Object o){
+        System.out.println("Objects HashCode: "+o.hashCode());
+        int index = Math.abs(o.hashCode() % array.length);
+        System.out.println("calculated index is: " + index);
+        return index;
     }
 
 }
