@@ -11,13 +11,50 @@ public class MyHashSetTest {
     //add
     @Test
     public void setShouldContainTheObjectAfterAdd(){
+        MyHashSet set = initMyHashSet();
+        Assert.assertTrue(set.contains("String1"));
+        Assert.assertTrue(set.contains("String2"));
+        Assert.assertTrue(set.contains("String3"));
+    }
+
+    @Test
+    public void setShouldHaveRightSizeAfterAdd(){
+        MyHashSet set = initMyHashSet();
+        Assert.assertEquals(3,set.size());
+    }
+
+    @Test
+    public void setShouldHaveRightSizeAfterRemove(){
+        MyHashSet set = initMyHashSet();
+        set.remove("String1");
+        Assert.assertEquals(2,set.size());
+    }
+
+    @Test
+    public void setShouldNotContainRemovedElement(){
+        MyHashSet set = initMyHashSet();
+        set.remove("String1");
+        Assert.assertFalse(set.contains("String1"));
+    }
+
+    @Test
+    public void containsTest(){
+        MyHashSet set = initMyHashSet();
+        set.add("someString");
+        Assert.assertTrue(set.contains("someString"));
+        set.remove("someString");
+        Assert.assertFalse(set.contains("someString"));
+        set.remove("String1");
+        Assert.assertFalse(set.contains("String1"));
+    }
+
+
+    private MyHashSet initMyHashSet() {
         MyHashSet set = new MyHashSet();
         set.add("String1");
         set.add("String2");
         set.add("String3");
-        Assert.assertTrue(set.contains("String1"));
-        Assert.assertTrue(set.contains("String2"));
-        Assert.assertTrue(set.contains("String3"));
+        return set;
     }
 
 
