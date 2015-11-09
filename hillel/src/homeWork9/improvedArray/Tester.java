@@ -178,7 +178,7 @@ public class Tester {
     }
 
 
-    //set(Object o, index)
+    //updateWeather(Object o, index)
     @Test
     public void elementShouldBeChanged() {
         ImprovedArray improvedArray = initImprArr();

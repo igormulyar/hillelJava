@@ -36,7 +36,7 @@ public class ImprovedLinkedListTest {
         Assert.assertEquals("Zero", list.get(0));
     }
 
-    //set
+    //updateWeather
     @Test
     public void valueChangedButSizeNotWhenSet() {
         ImprovedLinked list = new ImprovedLinked();
