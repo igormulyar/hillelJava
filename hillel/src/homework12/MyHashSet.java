@@ -28,19 +28,15 @@ public class MyHashSet {
     }
 
     public void remove(Comparable o) {
-        int searchIndex = o.hashCode() % array.length;
-        for (Comparable obj : array[searchIndex]) {
-            if (obj.equals(o)) {
-                array[searchIndex].remove(o);
-                count--;
-            }
+        int searchIndex = Math.abs(o.hashCode() % array.length);
+        if (array[searchIndex].contains(o)) {
+            array[searchIndex].remove(o);
+            count--;
         }
-
     }
 
     public boolean contains(Comparable o) {
         int searchIndex = Math.abs(o.hashCode() % array.length);
-        System.out.println("searchIndex = " + searchIndex);
         if (array[searchIndex] == null) {
             return false;
         }
