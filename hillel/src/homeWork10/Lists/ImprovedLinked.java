@@ -1,9 +1,11 @@
 package homeWork10.Lists;
 
+import java.util.Iterator;
+
 /**
  * Created by igor on 24.10.15.
  */
-public class ImprovedLinked implements ImprovedList {
+public class ImprovedLinked implements ImprovedList, Iterable<Comparable> {
 
     private ListElement head;
 
@@ -171,6 +173,31 @@ public class ImprovedLinked implements ImprovedList {
     @Override
     public boolean isEmpty() {
         return head == null;
+    }
+
+    @Override
+    public Iterator<Comparable> iterator() {
+        return null;
+    }
+
+    private class Iter implements Iterator{
+
+        private final ImprovedLinked list;
+        int cursorIndex;
+
+        public Iter(ImprovedLinked list) {
+            this.list = list;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return cursorIndex < list.size();
+        }
+
+        @Override
+        public Object next() {
+            return list.get(cursorIndex++);
+        }
     }
 
 
