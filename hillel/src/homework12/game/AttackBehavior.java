@@ -9,6 +9,6 @@ public interface AttackBehavior {
      *
      * @return value of damage caused by particular weapon
      */
-    int attack();
+    int attack(Character character);
 
 }

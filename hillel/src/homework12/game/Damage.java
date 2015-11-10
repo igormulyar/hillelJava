@@ -5,6 +5,10 @@ package homework12.game;
  */
 public interface Damage {
 
+    /**
+     *
+     * @return the value of particular type of damage
+     */
     int getDamage();
 
 }

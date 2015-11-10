@@ -7,7 +7,23 @@ public abstract class Character {
 
     protected AttackBehavior attackBehavior;
 
+    /**
+     *
+     * @return message about attack action
+     */
     public abstract String attack();
 
+    /**
+     *
+     * @return bonus of damage for appropriate weapon
+     */
+    public abstract int getDamageBonus();
 
+    /**
+     *
+     * @param attackBehavior defines the weapon and attack behavior
+     */
+    public void setWeapon(AttackBehavior attackBehavior) {
+        this.attackBehavior = attackBehavior;
+    }
 }

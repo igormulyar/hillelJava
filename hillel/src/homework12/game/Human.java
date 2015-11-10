@@ -13,6 +13,11 @@ public class Human extends Character {
 
     @Override
     public String attack() {
-        return "Human attacked. Damage is : " + attackBehavior.attack();
+        return "Human attacked. Damage is : " + attackBehavior.attack(new Human());
+    }
+
+    @Override
+    public int getDamageBonus() {
+        return 3;
     }
 }

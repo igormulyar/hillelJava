@@ -9,7 +9,11 @@ public class BowAttack implements AttackBehavior {
     Damage damage = new LancinatingDamage();
 
     @Override
-    public int attack() {
-        return damage.getDamage();
+    public int attack(Character character) {
+        if (character instanceof Elf){
+        return damage.getDamage()+character.getDamageBonus();
+        } else{
+            return damage.getDamage() + character.getDamageBonus()/2;
+        }
     }
 }

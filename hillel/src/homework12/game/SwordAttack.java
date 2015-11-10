@@ -10,9 +10,12 @@ public class SwordAttack implements AttackBehavior {
     Damage damage = new CuttingDamage();
 
     @Override
-    public int attack() {
-        return damage.getDamage();
+    public int attack(Character character) {
+        if (character instanceof Human) {
+            return damage.getDamage() + character.getDamageBonus();
+        } else {
+            return damage.getDamage() + character.getDamageBonus() / 2;
+        }
     }
-
 
 }
