@@ -1,4 +1,4 @@
-package homework12;
+package homework12.hashSetBycicle;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -10,7 +10,7 @@ public class MyHashSetTest {
 
     //add
     @Test
-    public void setShouldContainTheObjectAfterAdd(){
+    public void setShouldContainTheObjectAfterAdd() {
         MyHashSet set = initMyHashSet();
         Assert.assertTrue(set.contains("String1"));
         Assert.assertTrue(set.contains("String2"));
@@ -18,27 +18,27 @@ public class MyHashSetTest {
     }
 
     @Test
-    public void setShouldHaveRightSizeAfterAdd(){
+    public void setShouldHaveRightSizeAfterAdd() {
         MyHashSet set = initMyHashSet();
-        Assert.assertEquals(3,set.size());
+        Assert.assertEquals(3, set.size());
     }
 
     @Test
-    public void setShouldHaveRightSizeAfterRemove(){
+    public void setShouldHaveRightSizeAfterRemove() {
         MyHashSet set = initMyHashSet();
         set.remove("String1");
-        Assert.assertEquals(2,set.size());
+        Assert.assertEquals(2, set.size());
     }
 
     @Test
-    public void setShouldNotContainRemovedElement(){
+    public void setShouldNotContainRemovedElement() {
         MyHashSet set = initMyHashSet();
         set.remove("String1");
         Assert.assertFalse(set.contains("String1"));
     }
 
     @Test
-    public void containsTest(){
+    public void containsTest() {
         MyHashSet set = initMyHashSet();
         set.add("someString");
         Assert.assertTrue(set.contains("someString"));
