@@ -58,8 +58,7 @@ public class MyHashSet implements Iterable<Comparable> {
     }
 
     private int calcHashIndex(Comparable o) {
-        int index = Math.abs(o.hashCode() % array.length);
-        return index;
+        return Math.abs(o.hashCode() % array.length);
     }
 
     @Override
