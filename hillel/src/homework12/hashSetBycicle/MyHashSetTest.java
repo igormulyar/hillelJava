@@ -3,6 +3,8 @@ package homework12.hashSetBycicle;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Iterator;
+
 /**
  * Created by igor on 08.11.15.
  */
@@ -47,6 +49,7 @@ public class MyHashSetTest {
         set.remove("String1");
         Assert.assertFalse(set.contains("String1"));
     }
+
 
 
     private MyHashSet initMyHashSet() {

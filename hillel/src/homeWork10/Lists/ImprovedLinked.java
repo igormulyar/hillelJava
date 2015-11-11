@@ -177,7 +177,7 @@ public class ImprovedLinked implements ImprovedList, Iterable<Comparable> {
 
     @Override
     public Iterator<Comparable> iterator() {
-        return null;
+        return new Iter(this);
     }
 
     private class Iter implements Iterator{
