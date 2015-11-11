@@ -1,5 +1,7 @@
 package homeWork10.Lists;
 
+import Exceptions.myExceptions.WrongIndexException;
+
 import java.util.Iterator;
 
 /**
@@ -82,7 +84,7 @@ public class ImprovedLinked implements ImprovedList, Iterable<Comparable> {
     }
 
     @Override
-    public boolean equals(ImprovedList other) {
+    public boolean equals(ImprovedList other) throws WrongIndexException {
         if (!(other instanceof ImprovedLinked)) {
             return false;
         }

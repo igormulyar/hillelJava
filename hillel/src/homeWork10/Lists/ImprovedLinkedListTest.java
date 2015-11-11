@@ -1,5 +1,6 @@
 package homeWork10.Lists;
 
+import Exceptions.myExceptions.WrongIndexException;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -52,7 +53,7 @@ public class ImprovedLinkedListTest {
 
     // equals
     @Test
-    public void everyElemShouldBeEqual() {
+    public void everyElemShouldBeEqual() throws WrongIndexException {
         ImprovedLinked list = new ImprovedLinked();
         list.add("First");
         list.add("Second");

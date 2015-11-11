@@ -1,5 +1,6 @@
 package homeWork11.improvedArray;
 
+import Exceptions.myExceptions.WrongIndexException;
 import homeWork10.Lists.ImprovedList;
 import homeWork9.improvedArray.sorters.InsertSort;
 import homeWork9.improvedArray.sorters.Sorter;
@@ -25,7 +26,12 @@ public class ImprovedArray implements ImprovedList, Iterable<Comparable> {
 
     // since homeWork 9
     @Override
-    public void add(int index, Comparable o) {
+    public void add(int index, Comparable o) throws WrongIndexException {
+
+        if (index < 0 && index > elementsCounter - 1) {
+            throw new WrongIndexException("invalid value of index");
+        }
+
         if (elementsCounter > array.length - 1) {
             extendArray();
         }
@@ -36,12 +42,21 @@ public class ImprovedArray implements ImprovedList, Iterable<Comparable> {
 
     // since homeWork 9
     @Override
-    public void set(int index, Comparable o) {
+    public void set(int index, Comparable o) throws WrongIndexException, NullPointerException {
+        if (index < 0 && index > elementsCounter - 1) {
+            throw new WrongIndexException("invalid value of index");
+        }
+        if (o == null) {
+            throw new NullPointerException("null was sent to method's parameter");
+        }
         array[index] = o;
     }
 
     @Override
-    public Comparable get(int index) {
+    public Comparable get(int index) throws WrongIndexException {
+        if (index < 0 && index > elementsCounter - 1) {
+            throw new WrongIndexException("invalid value of index");
+        }
         return array[index];
     }
 
@@ -51,7 +66,10 @@ public class ImprovedArray implements ImprovedList, Iterable<Comparable> {
     }
 
     @Override
-    public boolean equals(ImprovedList other) {
+    public boolean equals(ImprovedList other) throws NullPointerException {
+        if (other == null) {
+            throw new NullPointerException("null was sent to method's parameter");
+        }
         return Arrays.equals(this.toArray(), other.toArray());
     }
 
@@ -73,7 +91,10 @@ public class ImprovedArray implements ImprovedList, Iterable<Comparable> {
 
     // added in homeWork 6
     @Override
-    public boolean contains(Comparable obj) {
+    public boolean contains(Comparable obj) throws NullPointerException {
+        if (obj == null) {
+            throw new NullPointerException("null was sent to method's parameter");
+        }
         for (int i = 0; i < size(); i++) {
             if (array[i].equals(obj)) return true;
         }
@@ -82,7 +103,10 @@ public class ImprovedArray implements ImprovedList, Iterable<Comparable> {
 
     // added in homeWork 6
     @Override
-    public void remove(int index) {
+    public void remove(int index) throws WrongIndexException {
+        if (index < 0 && index > elementsCounter - 1) {
+            throw new WrongIndexException("invalid value of index");
+        }
         if (index < size()) {
             System.arraycopy(array, index + 1, array, index, size() - index + 1);
             elementsCounter--;
@@ -91,7 +115,10 @@ public class ImprovedArray implements ImprovedList, Iterable<Comparable> {
 
     // added in homeWork 6
     @Override
-    public void remove(Comparable obj) {
+    public void remove(Comparable obj) throws NullPointerException {
+        if (obj == null) {
+            throw new NullPointerException("null was sent to method's parameter");
+        }
         for (int i = 0; i < size(); i++) {
             if (array[i].equals(obj) && i != size() - 1) {
                 System.arraycopy(array, i + 1, array, i, size() - i + 1);
@@ -176,12 +203,22 @@ public class ImprovedArray implements ImprovedList, Iterable<Comparable> {
 
         @Override
         public Comparable next() {
-            return list.get(cursorIndex++);
+            Comparable next = null;
+            try {
+                next = list.get(cursorIndex++);
+            } catch (WrongIndexException e) {
+                e.printStackTrace();
+            }
+            return next;
         }
 
         @Override
         public void remove() {
-            list.remove(cursorIndex);
+            try {
+                list.remove(cursorIndex);
+            } catch (WrongIndexException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

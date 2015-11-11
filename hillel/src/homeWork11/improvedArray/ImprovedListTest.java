@@ -1,5 +1,6 @@
 package homeWork11.improvedArray;
 
+import Exceptions.myExceptions.WrongIndexException;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -13,7 +14,7 @@ public class ImprovedListTest {
 
     //add() method
     @Test
-    public void elementShouldBeAddedToRightPosition() {
+    public void elementShouldBeAddedToRightPosition() throws WrongIndexException {
         ImprovedArray improvedArray = initImprArr();            // initImprArr() метод в конце класса
 
         Object expected = "element 2";
@@ -24,7 +25,7 @@ public class ImprovedListTest {
 
     //get()
     @Test
-    public void getShouldReturnCorrectObject() {
+    public void getShouldReturnCorrectObject() throws WrongIndexException {
         ImprovedArray improvedArray = initImprArr();
 
         Object expected = "element 1";
@@ -35,7 +36,7 @@ public class ImprovedListTest {
 
     //size()
     @Test
-    public void sizeShouldBeCorrect() {
+    public void sizeShouldBeCorrect() throws WrongIndexException {
         ImprovedArray improvedArray = initImprArr();
 
         int expected = 5;
@@ -87,7 +88,7 @@ public class ImprovedListTest {
 
     //contains()
     @Test
-    public void shouldContainElement() {
+    public void shouldContainElement() throws WrongIndexException {
         ImprovedArray improvedArray = initImprArr();
         boolean actual = improvedArray.contains("element 1");
         Assert.assertTrue("cant find the element, but array contains it", actual);
@@ -118,7 +119,7 @@ public class ImprovedListTest {
 
     //remove(index)
     @Test
-    public void indexRemShouldNotContainRemovedObject() {
+    public void indexRemShouldNotContainRemovedObject() throws WrongIndexException {
         ImprovedArray improvedArray = initImprArr();
         improvedArray.remove(0);
         boolean actual = improvedArray.contains("element 0");
@@ -126,7 +127,7 @@ public class ImprovedListTest {
     }
 
     @Test
-    public void indexRemCounterShouldBeDecreased() {
+    public void indexRemCounterShouldBeDecreased() throws WrongIndexException {
         ImprovedArray improvedArray = initImprArr();
         improvedArray.remove(0);
         int expected = 4;
@@ -153,7 +154,7 @@ public class ImprovedListTest {
 
     //add(Object o, int index)
     @Test
-    public void arrayShouldContainAddedByIndexElement() {
+    public void arrayShouldContainAddedByIndexElement() throws WrongIndexException {
         ImprovedArray improvedArray = initImprArr();
         improvedArray.add(3, "added by index");
         boolean actual = improvedArray.contains("added by index");
@@ -161,7 +162,7 @@ public class ImprovedListTest {
     }
 
     @Test
-    public void elementsAfterAddedMustBeShifted() {
+    public void elementsAfterAddedMustBeShifted() throws WrongIndexException {
         ImprovedArray improvedArray = initImprArr();
         improvedArray.add(3, "added by index");
         Object expected = "element 4";
@@ -170,7 +171,7 @@ public class ImprovedListTest {
     }
 
     @Test
-    public void sizeShouldBeIncreased() {
+    public void sizeShouldBeIncreased() throws WrongIndexException {
         ImprovedArray improvedArray = initImprArr();
         improvedArray.add(3, "added by index");
         int expected = 6;
@@ -181,7 +182,7 @@ public class ImprovedListTest {
 
     //updateWeather(Object o, index)
     @Test
-    public void elementShouldBeChanged() {
+    public void elementShouldBeChanged() throws WrongIndexException {
         ImprovedArray improvedArray = initImprArr();
         improvedArray.set(3, "element 3");
         Object expected = "element 3";
@@ -190,7 +191,7 @@ public class ImprovedListTest {
     }
 
     @Test
-    public void sizeHaveNotBeenChanged() {
+    public void sizeHaveNotBeenChanged() throws WrongIndexException {
         ImprovedArray improvedArray = initImprArr();
         improvedArray.set(3, "element 3");
         int expected = 5;
