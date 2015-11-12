@@ -49,6 +49,18 @@ public class AdvancedForm  extends JFrame {
             }
         });
 
+        exitButton.addActionListener(e -> {
+            System.out.println("exit" + e.getActionCommand());
+            System.out.println("second line from LAMBDA");
+        });
+
+        exitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("exit");
+            }
+        });
+
 
     }
 
