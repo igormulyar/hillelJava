@@ -8,14 +8,23 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Beverage beverage = new Robusta();
-        beverage.setMilk(true);
-        System.out.println(beverage.description() + " " + beverage.cost());
+//        Beverage beverage = new Robusta();
+//        beverage.setMilk(true);
+//        System.out.println(beverage.description() + " " + beverage.cost());
+//
+//        Scanner scanner = new Scanner(System.in);
+//        int cash = scanner.nextInt();
+//
+//        check(cash, beverage);
 
-        Scanner scanner = new Scanner(System.in);
-        int cash = scanner.nextInt();
+        Beverage beverage = new Arabica();
+        beverage = new Milk(beverage);
+        beverage = new Milk(beverage);
 
-        check(cash, beverage);
+
+        System.out.println(beverage.description());
+        System.out.println(beverage.cost());
+
     }
 
     private static void check(int cash, Beverage beverage) {

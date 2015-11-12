@@ -5,6 +5,7 @@ package patterns.decorator;
  */
 public class Arabica extends Beverage {
     public Arabica() {
-        super(12, "Arabica coffee");
+        setCost(12);
+        setDescription("Arabica coffee");
     }
 }

@@ -5,6 +5,7 @@ package patterns.decorator;
  */
 public class Robusta extends Beverage {
     public Robusta() {
-        super(8, "Robusta coffee");
+        setCost(8);
+        setDescription("Robusta coffee");
     }
 }

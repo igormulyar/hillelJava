@@ -6,41 +6,24 @@ package patterns.decorator;
 public abstract class Beverage {
 
 
-    private final int cost;
-    private String description;
+    protected int cost;
+    protected String description;
 
-    private boolean hasMilk;
-    private boolean hasCream;
-
-    private int milkCoast = 5;
-    private int creamCost = 8;
-
-
-    public Beverage(int cost, String description) {
+    public void setCost(int cost) {
         this.cost = cost;
+    }
+
+    public void setDescription(String description) {
         this.description = description;
     }
 
     public int cost(){
-        int total = cost;
-        if(hasMilk){
-            total += milkCoast;
-        }
-        if(hasCream){
-            total += creamCost;
-        }
-        return total;
+
+        return cost;
     }
 
     public String description (){
         return description;
     }
 
-    public void setCream (boolean hasCream){
-        this.hasCream = hasCream;
-    }
-
-    public void setMilk (boolean hasMilk){
-        this.hasMilk = hasMilk;
-    }
 }
