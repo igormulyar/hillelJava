@@ -13,7 +13,7 @@ public class MyHashSet implements Iterable<Comparable> {
     private int count = 0;
 
     public void add(Comparable o) {
-        int index = calcHashIndex(o);
+        int index = calcHashIndex(o, array.length);
         if (count > 0.7 * array.length) {
             extendArray();
         }
@@ -50,15 +50,23 @@ public class MyHashSet implements Iterable<Comparable> {
     private void extendArray() {
         ImprovedLinked[] newArray = new ImprovedLinked[array.length * 3];
         for (ImprovedLinked list : array) {
-            for (Comparable obj : list) {
-                newArray[calcHashIndex(obj)].add(obj);
+            if (!(list==null)) {
+
+                for (Comparable obj : list) {
+                    int index = calcHashIndex(obj, newArray.length);
+                    if (newArray[index] == null){
+                        newArray[index] = new ImprovedLinked();
+                    }
+                    newArray[index].add(obj);
+                }
+
             }
         }
         array = newArray;
     }
 
-    private int calcHashIndex(Comparable o) {
-        return Math.abs(o.hashCode() % array.length);
+    private int calcHashIndex(Comparable o, int arrayLength) {
+        return Math.abs(o.hashCode() % arrayLength);
     }
 
     @Override

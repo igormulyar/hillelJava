@@ -10,6 +10,13 @@ public class MainIterate {
         set.add("Second");
         set.add("Third");
         set.add("Fourth");
+        set.add("String5");
+        set.add("String6");
+        set.add("String7");
+        set.add("String8");
+        set.add("String9");
+        set.add("String10");
+        set.add("String11");
 
 
         for(Comparable o : set){

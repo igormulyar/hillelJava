@@ -40,6 +40,19 @@ public class MyHashSetTest {
     }
 
     @Test
+    public void setShouldBeExtendable(){
+        MyHashSet set = initMyHashSet();
+        set.add("String4");
+        set.add("String5");
+        set.add("String6");
+        set.add("String7");
+        set.add("String8");
+        set.add("String9");
+        set.add("String10");
+        set.add("String11");
+    }
+
+    @Test
     public void containsTest() {
         MyHashSet set = initMyHashSet();
         set.add("someString");
