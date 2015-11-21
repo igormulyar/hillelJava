@@ -24,6 +24,8 @@ public class IOMain {
             throw new RuntimeException(e);
         }
 
+        //some changes to check git
+
 
         try (DataInputStream dataInputStream = new DataInputStream(new FileInputStream("/myData.dat"))) {
             try {
