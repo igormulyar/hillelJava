@@ -11,4 +11,6 @@ public interface AttackBehavior {
      */
     int attack(Character character);
 
+
+
 }

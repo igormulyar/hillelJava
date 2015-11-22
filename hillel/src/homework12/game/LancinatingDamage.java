@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * Created by TRUST on 10.11.2015.
  */
-public class LancinatingDamage implements Damage {
+public class LancinatingDamage extends Damage {
     @Override
     public int getDamage() {
         Random rand = new Random();

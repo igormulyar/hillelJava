@@ -18,4 +18,8 @@ public class SwordAttack implements AttackBehavior {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Sword ";
+    }
 }

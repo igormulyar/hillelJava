@@ -20,4 +20,10 @@ public class Human extends Character {
     public int getDamageBonus() {
         return 3;
     }
+
+    @Override
+    public String toString(){
+        return "Human "+attackBehavior.toString();
+    }
+
 }

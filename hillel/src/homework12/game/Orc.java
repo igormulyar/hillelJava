@@ -18,4 +18,9 @@ public class Orc extends Character {
     public int getDamageBonus() {
         return 2;
     }
+
+    @Override
+    public String toString(){
+        return "Orc "+attackBehavior.toString();
+    }
 }

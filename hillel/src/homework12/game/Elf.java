@@ -20,4 +20,9 @@ public class Elf extends Character {
         return 4;
     }
 
+    @Override
+    public String toString(){
+        return "Elf "+attackBehavior.toString();
+    }
+
 }

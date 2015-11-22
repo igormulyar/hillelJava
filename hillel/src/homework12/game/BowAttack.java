@@ -16,4 +16,9 @@ public class BowAttack implements AttackBehavior {
             return damage.getDamage() + character.getDamageBonus()/2;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Bow ";
+    }
 }

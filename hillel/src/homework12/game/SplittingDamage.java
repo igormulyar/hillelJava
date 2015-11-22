@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * Created by TRUST on 10.11.2015.
  */
-public class SplittingDamage implements Damage {
+public class SplittingDamage extends Damage {
 
 
     @Override
