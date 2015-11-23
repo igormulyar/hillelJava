@@ -5,13 +5,103 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Properties;
 
 /**
  * Created by IMulyar on 19.11.2015.
  */
 public class IOMain {
     public static void main(String[] args) {
+        try (FileInputStream fileInputStream = new FileInputStream("C:\\Users\\IMulyar\\IdeaProjects\\hillelJava\\hillel\\config.properties")){
+            Properties properties = new Properties();
 
+            properties.load(fileInputStream);
+            String carOwner = properties.getProperty("carOwner");
+            String carYear = properties.getProperty("carYear");
+            String carModel = properties.getProperty("carModel");
+            String carColor = properties.getProperty("carColor");
+
+            CarOwner owner = new CarOwner(carOwner);
+            Car car = new Car(carModel,Integer.parseInt(carYear), owner, carColor);
+
+            System.out.println(car);
+
+        } catch (IOException e){
+            System.out.println(e);
+        }
+
+    }
+
+    private static void serialVersionUID() {
+        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("/myData.dat")))
+        {
+//
+            List<Car> cars = (List<Car>)  objectInputStream.readObject();
+
+            System.out.println(cars);
+        } catch (IOException | ClassNotFoundException e)
+        {
+            System.out.println(e);
+        }
+    }
+
+    private static void objectStoreAndSerializable() {
+        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("/myData.dat")))
+        {
+            CarOwner owner = new CarOwner("Michail");
+            List<Car> cars = Arrays.asList(new Car("BMW", 1990, owner, "green"), new Car("Honda", 2002, owner, "yellow"));
+
+            for (Car car : cars) {
+                owner.addCar(car);
+            }
+
+
+            objectOutputStream.writeObject(cars);
+
+        } catch (IOException e)
+        {
+            System.out.println(e);
+        }
+
+        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("/myData.dat")))
+        {
+//            Object longsAsObject = objectInputStream.readObject();
+//            long[] longs = (long[]) longsAsObject;
+            List<Car> cars = (List<Car>)  objectInputStream.readObject();
+            System.out.println(cars);
+        } catch (IOException  | ClassNotFoundException e)
+        {
+            System.out.println(e);
+        }
+    }
+
+    private static void arrays() {
+        // works for Collections and other Object
+        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("/myData.dat")))
+        {
+            long[] longs = new long[]{1, 2, 3, 5, 4};
+            objectOutputStream.writeObject(longs);
+
+        } catch (IOException e)
+        {
+            System.out.println(e);
+        }
+
+        try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("/myData.dat")))
+        {
+//            Object longsAsObject = objectInputStream.readObject();
+//            long[] longs = (long[]) longsAsObject;
+            long[] longs = (long[])  objectInputStream.readObject();
+            System.out.println(Arrays.toString(longs));
+        } catch (IOException  | ClassNotFoundException e)
+        {
+            System.out.println(e);
+        }
+    }
+
+    private static void primitiveTypes() {
         try (DataOutputStream dataOutputStream = new DataOutputStream(new FileOutputStream("/myData.dat"))) {
             long[] longs = new long[]{1, 2, 3, 5, 4};
 
