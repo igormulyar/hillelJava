@@ -7,15 +7,24 @@ public class Bank {
 
     private int account1 = 50_000;
     private int account2 = 50_000;
+    private final Object lockObject = new Object();
 
 
     public void transaction (int amount, boolean direction){
         if (direction){
-            account1 -= amount;
-            account2 += amount;
+            synchronized(this) {
+                account1 -= amount;
+                account2 += amount;
+            }
         } else{
-            account2 -= amount;
-            account1 += amount;
+            synchronized(this) {
+                account2 -= amount;
+                account1 += amount;
+            }
+        }
+
+        synchronized (lockObject){
+            System.out.println("locking lockObject");
         }
 
     }
