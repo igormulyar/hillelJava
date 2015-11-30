@@ -3,12 +3,26 @@ package homework12.game;
 /**
  * Created by TRUST on 10.11.2015.
  */
-public abstract class Damage {
+public  class Damage {
+    private int cuttingDamage;
+    private int splittingDamage;
+    private int lancinatingDamage;
 
-    /**
-     *
-     * @return the value of particular type of damage
-     */
-    abstract int getDamage();
+    protected Damage(int cuttingDamage, int splittingDamage, int lancinatingDamage) {
+        this.cuttingDamage = cuttingDamage;
+        this.splittingDamage = splittingDamage;
+        this.lancinatingDamage = lancinatingDamage;
+    }
 
+    public int getCuttingDamage() {
+        return cuttingDamage;
+    }
+
+    public int getSplittingDamage() {
+        return splittingDamage;
+    }
+
+    public int getLancinatingDamage() {
+        return lancinatingDamage;
+    }
 }

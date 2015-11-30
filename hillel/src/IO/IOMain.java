@@ -14,6 +14,11 @@ import java.util.Properties;
  */
 public class IOMain {
     public static void main(String[] args) {
+        Properties();
+
+    }
+
+    private static void Properties() {
         try (FileInputStream fileInputStream = new FileInputStream("C:\\Users\\IMulyar\\IdeaProjects\\hillelJava\\hillel\\config.properties")){
             Properties properties = new Properties();
 
@@ -31,7 +36,6 @@ public class IOMain {
         } catch (IOException e){
             System.out.println(e);
         }
-
     }
 
     private static void serialVersionUID() {

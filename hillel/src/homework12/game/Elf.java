@@ -5,6 +5,8 @@ package homework12.game;
  */
 public class Elf extends Character {
 
+    private final Damage damageBonus = new Damage (0,0,4);
+
 
     public Elf() {
         attackBehavior = new BowAttack();
@@ -16,9 +18,10 @@ public class Elf extends Character {
     }
 
     @Override
-    public int getDamageBonus() {
-        return 4;
+    public Damage returnDamageBonus() {
+        return damageBonus;
     }
+
 
     @Override
     public String toString(){

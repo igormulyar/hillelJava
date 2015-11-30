@@ -13,11 +13,7 @@ public abstract class Character {
      */
     public abstract String attack();
 
-    /**
-     *
-     * @return bonus of damage for appropriate weapon
-     */
-    public abstract int getDamageBonus();
+    public abstract Damage returnDamageBonus();
 
     /**
      *

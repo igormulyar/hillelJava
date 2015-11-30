@@ -5,6 +5,8 @@ package homework12.game;
  */
 public class Orc extends Character {
 
+    private final Damage damageBonus = new Damage (0,2,0);
+
     public Orc() {
         attackBehavior = new HummerAttack();
     }
@@ -15,9 +17,10 @@ public class Orc extends Character {
     }
 
     @Override
-    public int getDamageBonus() {
-        return 2;
+    public Damage returnDamageBonus() {
+        return damageBonus;
     }
+
 
     @Override
     public String toString(){

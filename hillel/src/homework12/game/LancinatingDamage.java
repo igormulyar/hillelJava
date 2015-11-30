@@ -6,9 +6,8 @@ import java.util.Random;
  * Created by TRUST on 10.11.2015.
  */
 public class LancinatingDamage extends Damage {
-    @Override
-    public int getDamage() {
-        Random rand = new Random();
-        return rand.nextInt(6)+5;
+    public LancinatingDamage(int cuttingDamage, int splittingDamage, int lancinatingDamage) {
+        super(cuttingDamage, splittingDamage, lancinatingDamage);
     }
+
 }
