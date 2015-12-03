@@ -5,7 +5,7 @@ package homework12.game;
  */
 public class Human extends Character {
 
-
+    private final Damage damageBonus = new Damage(3,0,0);
 
     public Human() {
         attackBehavior = new SwordAttack();
@@ -17,9 +17,10 @@ public class Human extends Character {
     }
 
     @Override
-    public int getDamageBonus() {
-        return 3;
+    public Damage returnDamageBonus() {
+        return damageBonus;
     }
+
 
     @Override
     public String toString(){
