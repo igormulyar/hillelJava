@@ -1,6 +1,4 @@
-package homework12.game;
-
-import Exceptions.ExceptionsMain;
+package game;
 
 import java.io.*;
 import java.nio.charset.Charset;

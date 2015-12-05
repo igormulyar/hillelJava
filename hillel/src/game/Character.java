@@ -1,4 +1,4 @@
-package homework12.game;
+package game;
 
 /**
  * Created by TRUST on 30.10.2015.
@@ -11,7 +11,7 @@ public abstract class Character {
      *
      * @return message about attack action
      */
-    public abstract String attack();
+    public abstract int attack();
 
     public abstract Damage returnDamageBonus();
 

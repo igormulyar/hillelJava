@@ -1,5 +1,4 @@
-package homework12.game;
-
+package game;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -7,13 +6,17 @@ import java.util.Random;
 /**
  * Created by TRUST on 30.10.2015.
  */
-public class BowAttack implements AttackBehavior {
-    private Damage damage = new Damage (0,0, new Random().nextInt(6)+5);
-    private Damage bonus = null;
+public abstract class AttackBehavior {
+
+    protected Damage damage;
+    private Damage bonus;
 
 
-    @Override
-    public int attack(Character character) {
+    /**
+     * @param character is a type of character who attacks
+     * @return value of damage caused by particular weapon and depending on character type
+     */
+    public int attack(Character character){
         bonus = character.returnDamageBonus();
         int [] damages = new int[3];
         damages[0] =bonus.getCuttingDamage() + damage.getCuttingDamage();
@@ -24,8 +27,4 @@ public class BowAttack implements AttackBehavior {
         return damages[2] + damages[1]/2;
     }
 
-    @Override
-    public String toString() {
-        return "Bow ";
-    }
 }

@@ -1,4 +1,4 @@
-package homework12.game;
+package game;
 
 /**
  * Created by TRUST on 30.10.2015.
@@ -12,8 +12,8 @@ public class Human extends Character {
     }
 
     @Override
-    public String attack() {
-        return "Human attacked. Damage is : " + attackBehavior.attack(new Human());
+    public int attack() {
+        return attackBehavior.attack(this);
     }
 
     @Override

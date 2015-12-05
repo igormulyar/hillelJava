@@ -1,4 +1,4 @@
-package homework12.game;
+package game;
 
 /**
  * Created by TRUST on 10.11.2015.

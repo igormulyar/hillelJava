@@ -1,4 +1,4 @@
-package homework12.game;
+package game;
 
 /**
  * Created by TRUST on 30.10.2015.
@@ -12,8 +12,8 @@ public class Orc extends Character {
     }
 
     @Override
-    public String attack() {
-        return "Orc attacked. Damage is: " + attackBehavior.attack(new Orc());
+    public int attack() {
+        return attackBehavior.attack(this);
     }
 
     @Override

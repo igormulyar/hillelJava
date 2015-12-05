@@ -1,4 +1,4 @@
-package homework12.game;
+package game;
 
 /**
  * Created by TRUST on 30.10.2015.
@@ -13,8 +13,8 @@ public class Elf extends Character {
     }
 
     @Override
-    public String attack() {
-        return "Elf attacked. Damage is: " + attackBehavior.attack(new Elf());
+    public int attack() {
+        return  attackBehavior.attack(this);
     }
 
     @Override
