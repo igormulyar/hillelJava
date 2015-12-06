@@ -13,7 +13,7 @@ public class Elf extends Character {
 
     @Override
     public String toString(){
-        return "Elf "+attackBehavior.toString();
+        return "The Character is Elf. The weapon is "+attackBehavior.toString();
     }
 
 }

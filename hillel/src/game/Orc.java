@@ -13,6 +13,6 @@ public class Orc extends Character {
 
     @Override
     public String toString(){
-        return "Orc "+attackBehavior.toString();
+        return "The character is Orc. The weapon is "+attackBehavior.toString();
     }
 }

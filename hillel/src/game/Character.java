@@ -9,6 +9,17 @@ public abstract class Character {
 
     protected AttackBehavior attackBehavior;
     protected Damage damageBonus;
+    private int health = 100;
+
+    public boolean isAlive(){
+        return health >0;
+    }
+
+    public void attacked(int incomingDamage){
+        health -= incomingDamage;
+    }
+
+
 
     /**
      *

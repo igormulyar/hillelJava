@@ -13,7 +13,7 @@ public class Human extends Character {
 
     @Override
     public String toString(){
-        return "Human "+attackBehavior.toString();
+        return "The character is Human. The weapon is "+attackBehavior.toString();
     }
 
 }
