@@ -5,23 +5,11 @@ package game;
  */
 public class Elf extends Character {
 
-    private final Damage damageBonus = new Damage (0,0,4);
-
 
     public Elf() {
         attackBehavior = new BowAttack();
+        damageBonus = new Damage (0,0,4);
     }
-
-    @Override
-    public int attack() {
-        return  attackBehavior.attack(this);
-    }
-
-    @Override
-    public Damage returnDamageBonus() {
-        return damageBonus;
-    }
-
 
     @Override
     public String toString(){

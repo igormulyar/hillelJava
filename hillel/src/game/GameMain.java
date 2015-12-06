@@ -1,6 +1,8 @@
 package game;
 
 
+import java.io.IOException;
+
 /**
  * Created by TRUST on 30.10.2015.
  */
@@ -21,16 +23,21 @@ public class GameMain {
 
         human.setWeapon(new BowAttack());
         System.out.println("human attacked with bow: "+human.attack());
-    }
 
 
-    public void save (){
-        // TODO writting the persons and their weapons
-    }
+        IOSaveAndRecover.saveCharacter(human, "/home/igor/workspace/saveHumanWithBow");
 
-    public void load (){
+        human = new Orc();
 
-        //TODO readind save-files
+        System.out.println("Human became Orc : "+human.toString());
+        try {
+            human = IOSaveAndRecover.recoverCharacter("/home/igor/workspace/saveHumanWithBow");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Recovered human with bow: "+human.toString());
+
+
     }
 
 }

@@ -1,19 +1,30 @@
 package game;
 
+import java.util.Arrays;
+
 /**
  * Created by TRUST on 30.10.2015.
  */
 public abstract class Character {
 
     protected AttackBehavior attackBehavior;
+    protected Damage damageBonus;
 
     /**
      *
-     * @return message about attack action
+     * @return int value of damage
      */
-    public abstract int attack();
+    public  int attack(){
+        Damage damage = attackBehavior.attack();
 
-    public abstract Damage returnDamageBonus();
+        int [] damages = new int[3];
+        damages[0] =damageBonus.getCuttingDamage() + damage.getCuttingDamage();
+        damages[1] = damageBonus.getSplittingDamage() + damage.getSplittingDamage();
+        damages[2] = damageBonus.getLancinatingDamage() + damage.getLancinatingDamage();
+        Arrays.sort(damages);
+
+        return damages[2] + damages[1]/2;
+    }
 
     /**
      *
