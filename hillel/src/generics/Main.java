@@ -27,19 +27,56 @@ public class Main {
         addEmployee(personList);
         addEmployee(employeeList);
         //addEmployee(managerList); - doesn't work
+
+        List<Employee> copyEmployeeList = new ArrayList<>();
+        copy(employeeList, copyEmployeeList);
+        System.out.println(copyEmployeeList.size());
+
+
+        employeeList = Main.<Employee>copy(managerList, employeeList);
+
+
     }
 
-    public static void print (List<? extends Employee> list){   ///   <------  feature here <? extends Type>
+
+   /* public static void overLoadedMethod (List<String> strings){
+
+    }*/
+
+    public static void overLoadedMethod (List<Integer> integers){
+
+    }
+
+    public static void print (List<? extends Employee> list){   ///   <------  feature here "? - WILDCARD" <? extends Type> !
          for (Employee e : list){
             System.out.println(e);
         }
         //list.add(new Employee("ivan", 12))  - doesn't work
     }
 
-    public static void addEmployee (List< ? super Employee> list){ ///   <------  feature here < ? super Employee>
+    public static void addEmployee (List< ? super Employee> list){ ///   <------  feature here "? - WILDCARD" < ? super Employee>
         list.add( new Employee("ivan", 500));
         Object e = list.get(0); //  - BULLSHIT, because type is Object
     }
+
+    public static <T> List<T> copy (List<? extends T> source, List <T> target){
+        target.addAll(source);
+        return target;
+    }
+
+    public static <K,V> void copy (Pair<K,V> source , Pair<K,V> target){
+        target.key = source.key;
+        target.value = source.value;
+    }
+
+    public static <T>  List<T> copyFunction (List<? extends T> source){
+        List<T> target = new ArrayList<>();
+        target.addAll(source);
+        T element;
+        //element = new T(); - doesn't work. unknown constructor of <T>
+        return target;
+    }
+
 
     private static void rawTypeExample() {
         List<Employee> employeeList = new ArrayList<>();
