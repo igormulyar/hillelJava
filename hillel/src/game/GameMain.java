@@ -2,6 +2,7 @@ package game;
 
 
 import java.io.IOException;
+import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -20,10 +21,8 @@ public class GameMain {
         Character character1 = createPlayer();
         System.out.println("Congratulations, you successfully chose a new character. Information about it: " + character1.toString()+"\n");
 
-        System.out.println("CREATING THE PLAYER-2:");
-        System.out.println("Would you like to create new random character (press 1) or to load it from file(press 2)");
-        Character character2 = createPlayer();
-        System.out.println("Congratulations, you successfully chose a new character. Information about it: " + character2.toString()+"\n");
+        Socket socket = new Socket();
+
 
         System.out.println("To start the game, press ENTER:");
         new Scanner(System.in).nextLine();
@@ -76,7 +75,7 @@ public class GameMain {
         list.add(new Human());
         list.add(new Elf());
         list.add(new Orc());
-        return list.get(new Random().nextInt(4));
+        return list.get(new Random().nextInt(3));
     }
 
 }
