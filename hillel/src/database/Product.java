@@ -9,6 +9,9 @@ public class Product {
     private String category;
     private int price;
 
+    public Product() {  // de
+    }
+
     public Product(int id, String name, String category, int price) {
         this.id = id;
         this.name = name;
@@ -30,6 +33,23 @@ public class Product {
 
     public int getPrice() {
         return price;
+    }
+
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     @Override

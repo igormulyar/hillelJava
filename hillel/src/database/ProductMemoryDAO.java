@@ -15,6 +15,9 @@ public class ProductMemoryDAO implements ProductDAO {
         products = new ArrayList<>();
         products.add(new Product(1, "Mouse", "Computers", 10));
         products.add(new Product(2, "keyboars", "Computers", 15));
+
+
+
     }
 
 
@@ -61,4 +64,5 @@ public class ProductMemoryDAO implements ProductDAO {
     public void create(Product product) {
         products.add(product);
     }
+
 }

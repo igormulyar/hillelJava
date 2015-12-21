@@ -20,6 +20,15 @@ public class ProductDbDAO implements ProductDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {                                                             // FEATURE!!! ShutDownHook
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }));
+
     }
 
     @Override
@@ -123,4 +132,12 @@ public class ProductDbDAO implements ProductDAO {
             throw new RuntimeException(e);
         }
     }
+
+
+    // NOT RECOMMENDED TO USE finalize()
+    /*@Override
+    protected void finalize() throws Throwable {
+        connection.close();
+    }*/
+
 }
