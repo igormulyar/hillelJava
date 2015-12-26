@@ -1,4 +1,4 @@
-package game;
+package game.serverSide;
 
 import java.util.Arrays;
 
@@ -10,6 +10,7 @@ public abstract class Character {
     protected AttackBehavior attackBehavior;
     protected Damage damageBonus;
     private int health = 100;
+    private Character enemy;
 
     public boolean isAlive(){
         return health >0;
@@ -17,6 +18,19 @@ public abstract class Character {
 
     public void attacked(int incomingDamage){
         health -= incomingDamage;
+    }
+
+    // enemy
+    public void setEnemy (Character enemy){
+        this.enemy = enemy;
+    }
+
+    public boolean hasEnemy (){
+        return this.enemy != null;
+    }
+
+    public Character getEnemy (){
+        return  this.enemy;
     }
 
 

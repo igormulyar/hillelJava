@@ -1,4 +1,6 @@
-package game;
+package game.serverSide;
+
+import java.lang.*;
 
 /**
  * Created by TRUST on 30.10.2015.

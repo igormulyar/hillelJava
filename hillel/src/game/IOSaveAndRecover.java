@@ -1,5 +1,8 @@
 package game;
 
+import game.serverSide.*;
+import game.serverSide.Character;
+
 import java.io.*;
 import java.nio.charset.Charset;
 
@@ -8,7 +11,7 @@ import java.nio.charset.Charset;
  */
 public class IOSaveAndRecover {
 
-    public static void saveCharacter (Character character, String path){
+    public static void saveCharacter (game.serverSide.Character character, String path){
         try (BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(
                 new FileOutputStream(path), Charset.forName("UTF-8")))){
             bufferedWriter.write(character.toString());

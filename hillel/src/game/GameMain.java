@@ -1,6 +1,9 @@
 package game;
 
 
+import game.serverSide.*;
+import game.serverSide.Character;
+
 import java.io.IOException;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -18,7 +21,7 @@ public class GameMain {
 
         System.out.println("CREATING THE PLAYER-1:");
         System.out.println("Would you like to create new random character (press 1) or to load it from file(press 2)");
-        Character character1 = createPlayer();
+        game.serverSide.Character character1 = createPlayer();
         System.out.println("Congratulations, you successfully chose a new character. Information about it: " + character1.toString()+"\n");
 
         Socket socket = new Socket();
