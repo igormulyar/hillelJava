@@ -1,4 +1,6 @@
-package game;
+package game.serverSide;
+
+import java.lang.*;
 
 /**
  * Created by TRUST on 30.10.2015.
@@ -13,6 +15,6 @@ public class Orc extends Character {
 
     @Override
     public String toString(){
-        return "Orc "+attackBehavior.toString();
+        return "The character is Orc. The weapon is "+attackBehavior.toString();
     }
 }

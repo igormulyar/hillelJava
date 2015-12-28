@@ -1,4 +1,4 @@
-package game;
+package game.serverSide;
 
 /**
  * Created by TRUST on 30.10.2015.
@@ -13,7 +13,7 @@ public class Elf extends Character {
 
     @Override
     public String toString(){
-        return "Elf "+attackBehavior.toString();
+        return "The Character is Elf. The weapon is "+attackBehavior.toString();
     }
 
 }

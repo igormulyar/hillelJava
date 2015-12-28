@@ -1,4 +1,6 @@
-package game;
+package game.serverSide;
+
+import java.lang.*;
 
 /**
  * Created by TRUST on 30.10.2015.
@@ -13,7 +15,7 @@ public class Human extends Character {
 
     @Override
     public String toString(){
-        return "Human "+attackBehavior.toString();
+        return "The character is Human. The weapon is "+attackBehavior.toString();
     }
 
 }

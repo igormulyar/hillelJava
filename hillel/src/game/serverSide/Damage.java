@@ -1,4 +1,4 @@
-package game;
+package game.serverSide;
 
 /**
  * Created by TRUST on 10.11.2015.
