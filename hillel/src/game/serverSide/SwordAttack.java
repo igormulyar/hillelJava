@@ -1,11 +1,12 @@
 package game.serverSide;
 
+import java.io.Serializable;
 import java.util.Random;
 
 /**
  * Created by TRUST on 30.10.2015.
  */
-public class SwordAttack implements AttackBehavior {
+public class SwordAttack implements AttackBehavior, Serializable {
 
     @Override
     public Damage attack() {

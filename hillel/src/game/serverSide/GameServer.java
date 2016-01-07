@@ -10,7 +10,7 @@ import java.net.Socket;
  */
 public class GameServer {
 
-    private final static int port = 1488;
+    private final static int port = 1444;
     private static PlayerThread playerThread1;
     private static PlayerThread playerThread2;
 

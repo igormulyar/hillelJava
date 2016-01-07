@@ -8,7 +8,7 @@ import java.util.concurrent.ExecutionException;
 /**
  * Created by IMulyar on 21.12.2015.
  */
-public class SingletoneExample {
+class SingletoneExample {
     private static SingletoneExample instance;
     public String someValue;    // - bad idea
 

@@ -1,11 +1,12 @@
 package game.serverSide;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
 /**
  * Created by TRUST on 30.10.2015.
  */
-public abstract class Character {
+public abstract class Character implements Serializable {
 
     protected AttackBehavior attackBehavior;
     protected Damage damageBonus;

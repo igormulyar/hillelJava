@@ -1,9 +1,11 @@
 package game.serverSide;
 
+import java.io.Serializable;
+
 /**
  * Created by TRUST on 10.11.2015.
  */
-public  class Damage {
+public  class Damage implements Serializable {
     private int cuttingDamage;
     private int splittingDamage;
     private int lancinatingDamage;
