@@ -1,4 +1,4 @@
-package spring;
+package spring.mediaval;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -9,11 +9,17 @@ public class DamselRescuingKnight {
     private Quest quest;
 
     @Autowired
+    //@Qualifier("quest")
     public void setQuest(Quest quest) {
         this.quest = quest;
     }
 
     public void embarkQuest(){
         quest.embark();
+    }
+
+    @Deprecated
+    public void deprecatedMethod(){
+        System.out.println("Deprecated method called");
     }
 }

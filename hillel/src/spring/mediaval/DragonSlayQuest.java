@@ -1,4 +1,4 @@
-package spring;
+package spring.mediaval;
 
 /**
  * Created by IMulyar on 11.01.2016.
