@@ -20,4 +20,11 @@ public class SpringConfig {
     public DamselRescuingQuest quest (){
         return new DamselRescuingQuest();
     }
+
+
+    @Bean
+    public DragonSlayQuest dragonSlayQuest(){
+        return new DragonSlayQuest();
+    }
+
 }

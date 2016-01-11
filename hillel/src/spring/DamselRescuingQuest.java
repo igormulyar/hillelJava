@@ -9,4 +9,9 @@ public class DamselRescuingQuest implements Quest {
     public void embark(){
         System.out.println("Damsel rescuing quest embarked!");
     }
+
+    @Override
+    public String toString() {
+        return "DamselRescuingQuest{}";
+    }
 }

@@ -10,6 +10,11 @@ public class SpringMain {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
         DamselRescuingKnight knight = context.getBean(DamselRescuingKnight.class);
+       /* DamselRescuingQuest quest = (DamselRescuingQuest) context.getBean("quest");
+
+        quest = context.getBean(Quest.class);
+        quest = context.getBean(DamselRescuingQuest);*/
+
         knight.embarkQuest();
     }
 }
