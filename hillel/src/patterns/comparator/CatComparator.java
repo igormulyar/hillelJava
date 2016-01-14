@@ -22,7 +22,7 @@ public class CatComparator {
         cats.add(murzik);
         cats.add(barsik);
 
-        System.out.println("before sort: ");
+        System.out.println("before sortIntAsc: ");
         print(cats);
 
         Collections.sort(cats);
@@ -36,7 +36,7 @@ public class CatComparator {
         print(cats);
 
         Collections.sort(cats, new Reversed(new SortByAge()));
-        System.out.println("reverse sort:");
+        System.out.println("reverse sortIntAsc:");
         print(cats);
 
     }

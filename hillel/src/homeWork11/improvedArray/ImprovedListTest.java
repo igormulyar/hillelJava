@@ -221,7 +221,7 @@ public class ImprovedListTest {
         Assert.assertEquals("size is not 0", expected, actual);
     }
 
-    //sort()
+    //sortIntAsc()
     @Test
     public void arrayShouldBeOrdered() {
         ImprovedArray improvedArray = new ImprovedArray();
