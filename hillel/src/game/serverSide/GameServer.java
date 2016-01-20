@@ -41,7 +41,7 @@ public class GameServer {
 
         playerThread1.getCharacter().setEnemy(playerThread2.getCharacter());
         playerThread2.getCharacter().setEnemy(playerThread1.getCharacter());
-
+        System.out.println("Ready to play!");
     }
 
     public static synchronized boolean playerThreadsAreReady() {

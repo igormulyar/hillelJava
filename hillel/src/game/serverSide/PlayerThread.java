@@ -9,9 +9,12 @@ import java.net.Socket;
  */
 public class PlayerThread implements Runnable {
 
+    //FIELDS
     private final Socket socket2;
     Character character = null;
 
+
+    //METHODS
     public PlayerThread(Socket socket2) {
         this.socket2 = socket2;
     }
@@ -36,6 +39,10 @@ public class PlayerThread implements Runnable {
         }
 
 
+
+        while (true){
+
+        }
 
     }
 

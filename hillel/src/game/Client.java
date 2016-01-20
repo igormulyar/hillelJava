@@ -1,6 +1,6 @@
 package game;
 
-import com.sun.corba.se.impl.orbutil.ObjectWriter;
+
 import game.serverSide.*;
 import game.serverSide.Character;
 
@@ -14,25 +14,26 @@ import java.util.Scanner;
 /**
  * Created by igor on 13.12.15.
  */
-public class Client1 {
+public class Client {
+    private Socket socket = null;
 
     public static void main(String[] args) {
-        new Client1().start();
+        new Client().start();
     }
 
     private void start() {
 
         System.out.println("Would you like to create new random character (press 1) or to load it from file(press 2)");
-        game.serverSide.Character character1 = createPlayer();
-        System.out.println("OK. Your character is created. Let me connect to the server and send it to the server.");
-        sendCharacterToServer(character1);
+        game.serverSide.Character character = createPlayer();
+        System.out.println("OK. Your character is created: "+character.toString()+" Let me connect to the server and send it to the server.");
+        sendCharacterToServer(character);
         System.out.println("Your character successfully sent to server.");
+
 
 
     }
 
     private void sendCharacterToServer(Character character) {
-        Socket socket = null;
         try {
             socket = new Socket("localhost", 1444);
         } catch (IOException e) {
@@ -54,6 +55,13 @@ public class Client1 {
             System.out.println("ObjectOutputStream can NOT write character to server");
             e.printStackTrace();
         }
+
+//        try {
+//            socket.close();
+//        } catch (IOException e) {
+//            System.out.println("Cant close the socket.");
+//            e.printStackTrace();
+//        }
 
 
     }
