@@ -39,6 +39,6 @@ public class Sorter {
         return arr;
     }
 
-    // хотел также реализовать quick sort, но.. ниасилил(( ..пока что
+    // хотел также реализовать quick sortIntAsc, но.. ниасилил(( ..пока что
 
 }

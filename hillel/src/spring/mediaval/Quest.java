@@ -1,8 +1,8 @@
-package spring;
+package spring.mediaval;
 
 /**
  * Created by IMulyar on 28.12.2015.
  */
-interface Quest {
+public interface Quest {
     void embark();
 }
