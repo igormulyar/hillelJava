@@ -94,7 +94,11 @@ public class Java8Main {
         //------------------------------------
 
         List<String> colors = apples.stream()
+                //.filter(isHeavyAndGreen)
                 .map(Apple::getColor)
+                //.limit(2)
+                .distinct()
+                .sorted()
                 .collect(Collectors.toList());
 
 
