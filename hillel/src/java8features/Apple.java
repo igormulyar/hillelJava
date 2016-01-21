@@ -34,6 +34,10 @@ public class Apple implements Fruit {
         return color;
     }
 
+    public String getColor (Apple apple){
+        return "Some color";
+    }
+
     @Override
     public String toString() {
         return "Apple{" +
