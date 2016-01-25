@@ -25,7 +25,7 @@ public class Client {
     }
 
     private void send(String line) throws IOException {
-        Socket socket = new Socket("192.168.1.157", 3111);
+        Socket socket = new Socket("192.168.0.5", 3111);
         PrintWriter writer = new  PrintWriter(new OutputStreamWriter(socket.getOutputStream()));
         writer.println(line);
         writer.flush();

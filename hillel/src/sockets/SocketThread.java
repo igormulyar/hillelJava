@@ -28,7 +28,7 @@ public class SocketThread implements Runnable {
                 String message = reader.readLine();
 
                 if (message == null) {
-                    System.out.println("disconnected");
+                    System.out.println(/*"disconnected"*/);
                     break;
                 }
 
