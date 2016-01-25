@@ -1,3 +1,4 @@
+/*
 package homework14;
 
 import java.io.*;
@@ -5,9 +6,11 @@ import java.nio.charset.Charset;
 import java.time.Duration;
 import java.time.Instant;
 
+*/
 /**
- * Created by igor on 21.11.15.
- */
+* Created by igor on 21.11.15.
+*//*
+
 public class BufferedOrNot {
     public static void main(String[] args) {
 
@@ -53,3 +56,4 @@ public class BufferedOrNot {
 //OUT:
 //Duration (copied with not buffered stream, ms): 1335
 //Duration (copied with buffered stream, ms): 16
+*/

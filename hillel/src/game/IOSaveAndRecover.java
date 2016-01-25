@@ -60,7 +60,7 @@ public class IOSaveAndRecover {
         else if (text.contains("Bow")){
             character.setWeapon(new BowAttack());
         }
-        else if (text.contains("Orc")){
+        else if (text.contains("Hummer")){
             character.setWeapon(new HummerAttack());
         } else {
             System.out.println("recoveryFile contains uncorrect data");
